@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "WYMainDockVC.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +17,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    WYMainDockVC *vc = [[WYMainDockVC alloc] init];
+    self.window.rootViewController = vc;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

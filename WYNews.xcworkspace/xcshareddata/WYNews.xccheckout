@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D423EBD6-7AE6-42CB-A295-153DA1CDFD63</string>
+	<key>IDESourceControlProjectName</key>
+	<string>WYNews</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3F8B9D17B4AF13FC4C3DE8FB543A75E64519593C</key>
+		<string>github.com:davidear/WYNews.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>WYNews.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3F8B9D17B4AF13FC4C3DE8FB543A75E64519593C</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:davidear/WYNews.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3F8B9D17B4AF13FC4C3DE8FB543A75E64519593C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3F8B9D17B4AF13FC4C3DE8FB543A75E64519593C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>WYNews</string>
+		</dict>
+	</array>
+</dict>
+</plist>

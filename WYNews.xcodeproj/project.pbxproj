@@ -10,11 +10,18 @@
 		6B8981EE0E409A16C031930B /* libPods-WYNewsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52982EBDE6C6ACBCFAE34AF3 /* libPods-WYNewsTests.a */; };
 		B2E5CE861B14728E0061EC8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5CE851B14728E0061EC8B /* main.m */; };
 		B2E5CE891B14728E0061EC8B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5CE881B14728E0061EC8B /* AppDelegate.m */; };
-		B2E5CE8C1B14728E0061EC8B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5CE8B1B14728E0061EC8B /* ViewController.m */; };
-		B2E5CE8F1B14728E0061EC8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2E5CE8D1B14728E0061EC8B /* Main.storyboard */; };
 		B2E5CE911B14728E0061EC8B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2E5CE901B14728E0061EC8B /* Images.xcassets */; };
 		B2E5CE941B14728E0061EC8B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2E5CE921B14728E0061EC8B /* LaunchScreen.xib */; };
 		B2E5CEA01B14728E0061EC8B /* WYNewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5CE9F1B14728E0061EC8B /* WYNewsTests.m */; };
+		B2E5CED21B147AB60061EC8B /* WYNewsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5CEC41B147AB60061EC8B /* WYNewsVC.m */; };
+		B2E5CED51B147ACB0061EC8B /* WYDiscoverVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5CED41B147ACB0061EC8B /* WYDiscoverVC.m */; };
+		B2E5CED81B147ADB0061EC8B /* WYMeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5CED71B147ADB0061EC8B /* WYMeVC.m */; };
+		B2E5CEDB1B147AF00061EC8B /* WYReadVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5CEDA1B147AF00061EC8B /* WYReadVC.m */; };
+		B2E5CEDE1B147AFE0061EC8B /* WYVedioVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5CEDD1B147AFE0061EC8B /* WYVedioVC.m */; };
+		B2E5CEE81B1496180061EC8B /* Dock.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5CEE31B1496180061EC8B /* Dock.m */; };
+		B2E5CEE91B1496180061EC8B /* DockController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5CEE51B1496180061EC8B /* DockController.m */; };
+		B2E5CEEA1B1496180061EC8B /* DockItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5CEE71B1496180061EC8B /* DockItem.m */; };
+		B2E5CEED1B1496430061EC8B /* WYMainDockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5CEEC1B1496430061EC8B /* WYMainDockVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,14 +43,29 @@
 		B2E5CE851B14728E0061EC8B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B2E5CE871B14728E0061EC8B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B2E5CE881B14728E0061EC8B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B2E5CE8A1B14728E0061EC8B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B2E5CE8B1B14728E0061EC8B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		B2E5CE8E1B14728E0061EC8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B2E5CE901B14728E0061EC8B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B2E5CE931B14728E0061EC8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B2E5CE991B14728E0061EC8B /* WYNewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WYNewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2E5CE9E1B14728E0061EC8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2E5CE9F1B14728E0061EC8B /* WYNewsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYNewsTests.m; sourceTree = "<group>"; };
+		B2E5CEC31B147AB60061EC8B /* WYNewsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYNewsVC.h; sourceTree = "<group>"; };
+		B2E5CEC41B147AB60061EC8B /* WYNewsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYNewsVC.m; sourceTree = "<group>"; };
+		B2E5CED31B147ACB0061EC8B /* WYDiscoverVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYDiscoverVC.h; sourceTree = "<group>"; };
+		B2E5CED41B147ACB0061EC8B /* WYDiscoverVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYDiscoverVC.m; sourceTree = "<group>"; };
+		B2E5CED61B147ADB0061EC8B /* WYMeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYMeVC.h; sourceTree = "<group>"; };
+		B2E5CED71B147ADB0061EC8B /* WYMeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYMeVC.m; sourceTree = "<group>"; };
+		B2E5CED91B147AF00061EC8B /* WYReadVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYReadVC.h; sourceTree = "<group>"; };
+		B2E5CEDA1B147AF00061EC8B /* WYReadVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYReadVC.m; sourceTree = "<group>"; };
+		B2E5CEDC1B147AFE0061EC8B /* WYVedioVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYVedioVC.h; sourceTree = "<group>"; };
+		B2E5CEDD1B147AFE0061EC8B /* WYVedioVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYVedioVC.m; sourceTree = "<group>"; };
+		B2E5CEE21B1496180061EC8B /* Dock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dock.h; sourceTree = "<group>"; };
+		B2E5CEE31B1496180061EC8B /* Dock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dock.m; sourceTree = "<group>"; };
+		B2E5CEE41B1496180061EC8B /* DockController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DockController.h; sourceTree = "<group>"; };
+		B2E5CEE51B1496180061EC8B /* DockController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DockController.m; sourceTree = "<group>"; };
+		B2E5CEE61B1496180061EC8B /* DockItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DockItem.h; sourceTree = "<group>"; };
+		B2E5CEE71B1496180061EC8B /* DockItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DockItem.m; sourceTree = "<group>"; };
+		B2E5CEEB1B1496430061EC8B /* WYMainDockVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYMainDockVC.h; sourceTree = "<group>"; };
+		B2E5CEEC1B1496430061EC8B /* WYMainDockVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYMainDockVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,13 +127,9 @@
 		B2E5CE821B14728E0061EC8B /* WYNews */ = {
 			isa = PBXGroup;
 			children = (
+				B2E5CEB61B147AB60061EC8B /* Modules */,
 				B2E5CE871B14728E0061EC8B /* AppDelegate.h */,
 				B2E5CE881B14728E0061EC8B /* AppDelegate.m */,
-				B2E5CE8A1B14728E0061EC8B /* ViewController.h */,
-				B2E5CE8B1B14728E0061EC8B /* ViewController.m */,
-				B2E5CE8D1B14728E0061EC8B /* Main.storyboard */,
-				B2E5CE901B14728E0061EC8B /* Images.xcassets */,
-				B2E5CE921B14728E0061EC8B /* LaunchScreen.xib */,
 				B2E5CE831B14728E0061EC8B /* Supporting Files */,
 			);
 			path = WYNews;
@@ -122,6 +140,8 @@
 			children = (
 				B2E5CE841B14728E0061EC8B /* Info.plist */,
 				B2E5CE851B14728E0061EC8B /* main.m */,
+				B2E5CE901B14728E0061EC8B /* Images.xcassets */,
+				B2E5CE921B14728E0061EC8B /* LaunchScreen.xib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -141,6 +161,255 @@
 				B2E5CE9E1B14728E0061EC8B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B2E5CEB61B147AB60061EC8B /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				B2E5CEDF1B1496180061EC8B /* MainFrame */,
+				B2E5CEC11B147AB60061EC8B /* News */,
+				B2E5CEB71B147AB60061EC8B /* Discover */,
+				B2E5CEBC1B147AB60061EC8B /* Me */,
+				B2E5CEC81B147AB60061EC8B /* Read */,
+				B2E5CECD1B147AB60061EC8B /* Vedio */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		B2E5CEB71B147AB60061EC8B /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				B2E5CEB81B147AB60061EC8B /* Controller */,
+				B2E5CEB91B147AB60061EC8B /* Model */,
+				B2E5CEBA1B147AB60061EC8B /* Tool */,
+				B2E5CEBB1B147AB60061EC8B /* View */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		B2E5CEB81B147AB60061EC8B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B2E5CED31B147ACB0061EC8B /* WYDiscoverVC.h */,
+				B2E5CED41B147ACB0061EC8B /* WYDiscoverVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B2E5CEB91B147AB60061EC8B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B2E5CEBA1B147AB60061EC8B /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		B2E5CEBB1B147AB60061EC8B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B2E5CEBC1B147AB60061EC8B /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				B2E5CEBD1B147AB60061EC8B /* Controller */,
+				B2E5CEBE1B147AB60061EC8B /* Model */,
+				B2E5CEBF1B147AB60061EC8B /* Tool */,
+				B2E5CEC01B147AB60061EC8B /* View */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		B2E5CEBD1B147AB60061EC8B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B2E5CED61B147ADB0061EC8B /* WYMeVC.h */,
+				B2E5CED71B147ADB0061EC8B /* WYMeVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B2E5CEBE1B147AB60061EC8B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B2E5CEBF1B147AB60061EC8B /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		B2E5CEC01B147AB60061EC8B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B2E5CEC11B147AB60061EC8B /* News */ = {
+			isa = PBXGroup;
+			children = (
+				B2E5CEC21B147AB60061EC8B /* Controller */,
+				B2E5CEC51B147AB60061EC8B /* Model */,
+				B2E5CEC61B147AB60061EC8B /* Tool */,
+				B2E5CEC71B147AB60061EC8B /* View */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		B2E5CEC21B147AB60061EC8B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B2E5CEC31B147AB60061EC8B /* WYNewsVC.h */,
+				B2E5CEC41B147AB60061EC8B /* WYNewsVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B2E5CEC51B147AB60061EC8B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B2E5CEC61B147AB60061EC8B /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		B2E5CEC71B147AB60061EC8B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B2E5CEC81B147AB60061EC8B /* Read */ = {
+			isa = PBXGroup;
+			children = (
+				B2E5CEC91B147AB60061EC8B /* Controller */,
+				B2E5CECA1B147AB60061EC8B /* Model */,
+				B2E5CECB1B147AB60061EC8B /* Tool */,
+				B2E5CECC1B147AB60061EC8B /* View */,
+			);
+			path = Read;
+			sourceTree = "<group>";
+		};
+		B2E5CEC91B147AB60061EC8B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B2E5CED91B147AF00061EC8B /* WYReadVC.h */,
+				B2E5CEDA1B147AF00061EC8B /* WYReadVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B2E5CECA1B147AB60061EC8B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B2E5CECB1B147AB60061EC8B /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		B2E5CECC1B147AB60061EC8B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B2E5CECD1B147AB60061EC8B /* Vedio */ = {
+			isa = PBXGroup;
+			children = (
+				B2E5CECE1B147AB60061EC8B /* Controller */,
+				B2E5CECF1B147AB60061EC8B /* Model */,
+				B2E5CED01B147AB60061EC8B /* Tool */,
+				B2E5CED11B147AB60061EC8B /* View */,
+			);
+			path = Vedio;
+			sourceTree = "<group>";
+		};
+		B2E5CECE1B147AB60061EC8B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B2E5CEDC1B147AFE0061EC8B /* WYVedioVC.h */,
+				B2E5CEDD1B147AFE0061EC8B /* WYVedioVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B2E5CECF1B147AB60061EC8B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B2E5CED01B147AB60061EC8B /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		B2E5CED11B147AB60061EC8B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B2E5CEDF1B1496180061EC8B /* MainFrame */ = {
+			isa = PBXGroup;
+			children = (
+				B2E5CEE01B1496180061EC8B /* Controller */,
+				B2E5CEE11B1496180061EC8B /* View */,
+			);
+			path = MainFrame;
+			sourceTree = "<group>";
+		};
+		B2E5CEE01B1496180061EC8B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B2E5CEEB1B1496430061EC8B /* WYMainDockVC.h */,
+				B2E5CEEC1B1496430061EC8B /* WYMainDockVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B2E5CEE11B1496180061EC8B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B2E5CEE21B1496180061EC8B /* Dock.h */,
+				B2E5CEE31B1496180061EC8B /* Dock.m */,
+				B2E5CEE41B1496180061EC8B /* DockController.h */,
+				B2E5CEE51B1496180061EC8B /* DockController.m */,
+				B2E5CEE61B1496180061EC8B /* DockItem.h */,
+				B2E5CEE71B1496180061EC8B /* DockItem.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,7 +494,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2E5CE8F1B14728E0061EC8B /* Main.storyboard in Resources */,
 				B2E5CE941B14728E0061EC8B /* LaunchScreen.xib in Resources */,
 				B2E5CE911B14728E0061EC8B /* Images.xcassets in Resources */,
 			);
@@ -278,8 +546,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2E5CE8C1B14728E0061EC8B /* ViewController.m in Sources */,
+				B2E5CEDE1B147AFE0061EC8B /* WYVedioVC.m in Sources */,
 				B2E5CE891B14728E0061EC8B /* AppDelegate.m in Sources */,
+				B2E5CEE81B1496180061EC8B /* Dock.m in Sources */,
+				B2E5CEEA1B1496180061EC8B /* DockItem.m in Sources */,
+				B2E5CED51B147ACB0061EC8B /* WYDiscoverVC.m in Sources */,
+				B2E5CEDB1B147AF00061EC8B /* WYReadVC.m in Sources */,
+				B2E5CED21B147AB60061EC8B /* WYNewsVC.m in Sources */,
+				B2E5CED81B147ADB0061EC8B /* WYMeVC.m in Sources */,
+				B2E5CEE91B1496180061EC8B /* DockController.m in Sources */,
+				B2E5CEED1B1496430061EC8B /* WYMainDockVC.m in Sources */,
 				B2E5CE861B14728E0061EC8B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,14 +579,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B2E5CE8D1B14728E0061EC8B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B2E5CE8E1B14728E0061EC8B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B2E5CE921B14728E0061EC8B /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -406,6 +674,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = WYNews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -416,6 +685,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = WYNews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

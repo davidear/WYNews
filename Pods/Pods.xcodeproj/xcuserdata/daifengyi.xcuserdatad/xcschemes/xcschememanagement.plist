@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-WYNewsTests-Colours.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-WYNewsTests-MJRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-WYNewsTests-SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1F55D0FEA344181459E26299</key>
+		<key>130D6C2815AD0021F1166564</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A1ED0EEBDDD7A7930C4C9415</key>
+		<key>280B3382869FAA7F4584A891</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C29E274876A49E2046E9CCC0</key>
+		<key>2C4322626BAFE6EBA22A733D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A6B33D14AB0E976006B55731</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EA0B92AFD98DEBFE3935EEBE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -8,5 +8,7 @@ end
 target 'WYNewsTests' do
 	pod 'SDWebImage', '~> 3.7.2'
 	pod 'AFNetworking', '~> 2.5.4'
+	pod 'Colours'
+	pod 'MJRefresh'
 end
 
