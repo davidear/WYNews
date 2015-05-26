@@ -1,0 +1,494 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6B8981EE0E409A16C031930B /* libPods-WYNewsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52982EBDE6C6ACBCFAE34AF3 /* libPods-WYNewsTests.a */; };
+		B2E5CE861B14728E0061EC8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5CE851B14728E0061EC8B /* main.m */; };
+		B2E5CE891B14728E0061EC8B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5CE881B14728E0061EC8B /* AppDelegate.m */; };
+		B2E5CE8C1B14728E0061EC8B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5CE8B1B14728E0061EC8B /* ViewController.m */; };
+		B2E5CE8F1B14728E0061EC8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2E5CE8D1B14728E0061EC8B /* Main.storyboard */; };
+		B2E5CE911B14728E0061EC8B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2E5CE901B14728E0061EC8B /* Images.xcassets */; };
+		B2E5CE941B14728E0061EC8B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2E5CE921B14728E0061EC8B /* LaunchScreen.xib */; };
+		B2E5CEA01B14728E0061EC8B /* WYNewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5CE9F1B14728E0061EC8B /* WYNewsTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B2E5CE9A1B14728E0061EC8B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2E5CE781B14728E0061EC8B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B2E5CE7F1B14728E0061EC8B;
+			remoteInfo = WYNews;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		52982EBDE6C6ACBCFAE34AF3 /* libPods-WYNewsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WYNewsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8633C11E5F4B66D466BD92C7 /* Pods-WYNewsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WYNewsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WYNewsTests/Pods-WYNewsTests.release.xcconfig"; sourceTree = "<group>"; };
+		AA5C51468E6C2244E1627E16 /* Pods-WYNewsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WYNewsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WYNewsTests/Pods-WYNewsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B2E5CE801B14728E0061EC8B /* WYNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WYNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2E5CE841B14728E0061EC8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2E5CE851B14728E0061EC8B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B2E5CE871B14728E0061EC8B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B2E5CE881B14728E0061EC8B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B2E5CE8A1B14728E0061EC8B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B2E5CE8B1B14728E0061EC8B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B2E5CE8E1B14728E0061EC8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B2E5CE901B14728E0061EC8B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B2E5CE931B14728E0061EC8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		B2E5CE991B14728E0061EC8B /* WYNewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WYNewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2E5CE9E1B14728E0061EC8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2E5CE9F1B14728E0061EC8B /* WYNewsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYNewsTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B2E5CE7D1B14728E0061EC8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2E5CE961B14728E0061EC8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B8981EE0E409A16C031930B /* libPods-WYNewsTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		23A63BBAA30983ACB9801032 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AA5C51468E6C2244E1627E16 /* Pods-WYNewsTests.debug.xcconfig */,
+				8633C11E5F4B66D466BD92C7 /* Pods-WYNewsTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3BD97ADACECA616E21CD3B5B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				52982EBDE6C6ACBCFAE34AF3 /* libPods-WYNewsTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B2E5CE771B14728E0061EC8B = {
+			isa = PBXGroup;
+			children = (
+				B2E5CE821B14728E0061EC8B /* WYNews */,
+				B2E5CE9C1B14728E0061EC8B /* WYNewsTests */,
+				B2E5CE811B14728E0061EC8B /* Products */,
+				23A63BBAA30983ACB9801032 /* Pods */,
+				3BD97ADACECA616E21CD3B5B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B2E5CE811B14728E0061EC8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B2E5CE801B14728E0061EC8B /* WYNews.app */,
+				B2E5CE991B14728E0061EC8B /* WYNewsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B2E5CE821B14728E0061EC8B /* WYNews */ = {
+			isa = PBXGroup;
+			children = (
+				B2E5CE871B14728E0061EC8B /* AppDelegate.h */,
+				B2E5CE881B14728E0061EC8B /* AppDelegate.m */,
+				B2E5CE8A1B14728E0061EC8B /* ViewController.h */,
+				B2E5CE8B1B14728E0061EC8B /* ViewController.m */,
+				B2E5CE8D1B14728E0061EC8B /* Main.storyboard */,
+				B2E5CE901B14728E0061EC8B /* Images.xcassets */,
+				B2E5CE921B14728E0061EC8B /* LaunchScreen.xib */,
+				B2E5CE831B14728E0061EC8B /* Supporting Files */,
+			);
+			path = WYNews;
+			sourceTree = "<group>";
+		};
+		B2E5CE831B14728E0061EC8B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B2E5CE841B14728E0061EC8B /* Info.plist */,
+				B2E5CE851B14728E0061EC8B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B2E5CE9C1B14728E0061EC8B /* WYNewsTests */ = {
+			isa = PBXGroup;
+			children = (
+				B2E5CE9F1B14728E0061EC8B /* WYNewsTests.m */,
+				B2E5CE9D1B14728E0061EC8B /* Supporting Files */,
+			);
+			path = WYNewsTests;
+			sourceTree = "<group>";
+		};
+		B2E5CE9D1B14728E0061EC8B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B2E5CE9E1B14728E0061EC8B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B2E5CE7F1B14728E0061EC8B /* WYNews */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2E5CEA31B14728E0061EC8B /* Build configuration list for PBXNativeTarget "WYNews" */;
+			buildPhases = (
+				B2E5CE7C1B14728E0061EC8B /* Sources */,
+				B2E5CE7D1B14728E0061EC8B /* Frameworks */,
+				B2E5CE7E1B14728E0061EC8B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WYNews;
+			productName = WYNews;
+			productReference = B2E5CE801B14728E0061EC8B /* WYNews.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B2E5CE981B14728E0061EC8B /* WYNewsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2E5CEA61B14728E0061EC8B /* Build configuration list for PBXNativeTarget "WYNewsTests" */;
+			buildPhases = (
+				D0E0AA239E5A0C11D0AA1A88 /* Check Pods Manifest.lock */,
+				B2E5CE951B14728E0061EC8B /* Sources */,
+				B2E5CE961B14728E0061EC8B /* Frameworks */,
+				B2E5CE971B14728E0061EC8B /* Resources */,
+				99ECB82E716EF262FA942A12 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B2E5CE9B1B14728E0061EC8B /* PBXTargetDependency */,
+			);
+			name = WYNewsTests;
+			productName = WYNewsTests;
+			productReference = B2E5CE991B14728E0061EC8B /* WYNewsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B2E5CE781B14728E0061EC8B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = childrenOurFuture;
+				TargetAttributes = {
+					B2E5CE7F1B14728E0061EC8B = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					B2E5CE981B14728E0061EC8B = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = B2E5CE7F1B14728E0061EC8B;
+					};
+				};
+			};
+			buildConfigurationList = B2E5CE7B1B14728E0061EC8B /* Build configuration list for PBXProject "WYNews" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B2E5CE771B14728E0061EC8B;
+			productRefGroup = B2E5CE811B14728E0061EC8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B2E5CE7F1B14728E0061EC8B /* WYNews */,
+				B2E5CE981B14728E0061EC8B /* WYNewsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B2E5CE7E1B14728E0061EC8B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2E5CE8F1B14728E0061EC8B /* Main.storyboard in Resources */,
+				B2E5CE941B14728E0061EC8B /* LaunchScreen.xib in Resources */,
+				B2E5CE911B14728E0061EC8B /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2E5CE971B14728E0061EC8B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		99ECB82E716EF262FA942A12 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WYNewsTests/Pods-WYNewsTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0E0AA239E5A0C11D0AA1A88 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B2E5CE7C1B14728E0061EC8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2E5CE8C1B14728E0061EC8B /* ViewController.m in Sources */,
+				B2E5CE891B14728E0061EC8B /* AppDelegate.m in Sources */,
+				B2E5CE861B14728E0061EC8B /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2E5CE951B14728E0061EC8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2E5CEA01B14728E0061EC8B /* WYNewsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B2E5CE9B1B14728E0061EC8B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B2E5CE7F1B14728E0061EC8B /* WYNews */;
+			targetProxy = B2E5CE9A1B14728E0061EC8B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B2E5CE8D1B14728E0061EC8B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2E5CE8E1B14728E0061EC8B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B2E5CE921B14728E0061EC8B /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2E5CE931B14728E0061EC8B /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B2E5CEA11B14728E0061EC8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B2E5CEA21B14728E0061EC8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B2E5CEA41B14728E0061EC8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WYNews/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B2E5CEA51B14728E0061EC8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WYNews/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B2E5CEA71B14728E0061EC8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA5C51468E6C2244E1627E16 /* Pods-WYNewsTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WYNewsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WYNews.app/WYNews";
+			};
+			name = Debug;
+		};
+		B2E5CEA81B14728E0061EC8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8633C11E5F4B66D466BD92C7 /* Pods-WYNewsTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WYNewsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WYNews.app/WYNews";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B2E5CE7B1B14728E0061EC8B /* Build configuration list for PBXProject "WYNews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2E5CEA11B14728E0061EC8B /* Debug */,
+				B2E5CEA21B14728E0061EC8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2E5CEA31B14728E0061EC8B /* Build configuration list for PBXNativeTarget "WYNews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2E5CEA41B14728E0061EC8B /* Debug */,
+				B2E5CEA51B14728E0061EC8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2E5CEA61B14728E0061EC8B /* Build configuration list for PBXNativeTarget "WYNewsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2E5CEA71B14728E0061EC8B /* Debug */,
+				B2E5CEA81B14728E0061EC8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B2E5CE781B14728E0061EC8B /* Project object */;
+}
