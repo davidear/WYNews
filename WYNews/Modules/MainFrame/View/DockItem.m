@@ -29,7 +29,7 @@
         
         // 4.设置选中时的背景
         [self setBackgroundImage:[UIImage imageNamed:kDockItemSelectedBG] forState:UIControlStateSelected];
-        [self setTitleColor:[UIColor colorWithRed:221.0/255 green:50.0/255 blue:55.0/255 alpha:1] forState:UIControlStateSelected];
+        [self setTitleColor:kWYRed forState:UIControlStateSelected];
     }
     return self;
 }

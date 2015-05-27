@@ -7,20 +7,80 @@
 //
 
 #import "WYNewsVC.h"
-
-@interface WYNewsVC ()
+#import "WYTopicScrollView.h"
+#import "WYNewsScrollView.h"
+#import "WYNewsTableController.h"
+@interface WYNewsVC () <UIScrollViewDelegate>
 
 @end
 
 @implementation WYNewsVC
-
+{
+    WYTopicScrollView *_topicScrollView;
+    WYNewsScrollView *_newsScrollView;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
+    [self initSubviews];
+    [self loadData];
+    [self addChildVCs];
+}
+- (void)initSubviews
+{
     [self.navigationController setNavigationBarHidden:NO];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"top_navigation_background"] forBarMetrics:UIBarMetricsDefault];
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navbar_netease"]];
-//    self.navigationItem.leftBarButtonItem = [UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:<#(NSString *)#>] style:UIBarButtonItemStylePlain target:<#(id)#> action:<#(SEL)#>
+    
+    UIButton *button1 = [UIButton buttonWithType:UIButtonTypeCustom];
+    button1.frame = CGRectMake(0, 0, 48, 44);
+    button1.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 24);
+    [button1 setImage:[UIImage imageNamed:@"top_navi_bell_normal"] forState:UIControlStateNormal];
+    [button1 setImage:[UIImage  imageNamed:@"top_navi_bell_highlight"] forState:UIControlStateHighlighted];
+    [button1 addTarget:self action:@selector(newsFor24Hours) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button1];
+    
+    UIButton *button2 = [UIButton buttonWithType:UIButtonTypeCustom];
+    button2.frame = CGRectMake(0, 0, 48, 44);
+    button2.imageEdgeInsets = UIEdgeInsetsMake(0, 24, 0, 0);
+    [button2 setImage:[UIImage imageNamed:@"top_navigation_square"] forState:UIControlStateNormal];
+    //    [button2 setImage:[UIImage  imageNamed:@"top_navi_bell_highlight"] forState:UIControlStateHighlighted];
+    [button2 addTarget:self action:@selector(naviRightBarButtonAciton) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button2];
+    
+    _topicScrollView = [[WYTopicScrollView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kTopicScrollViewHeight)];
+    _topicScrollView.backgroundColor = [UIColor blueColor];
+    [self.view addSubview:_topicScrollView];
+    
+    _newsScrollView = [[WYNewsScrollView alloc] initWithFrame:CGRectMake(0, kTopicScrollViewHeight, kScreenWidth, kScreenHeight - kTopicScrollViewHeight - kDockHeight - 64)];
+    _newsScrollView.backgroundColor = [UIColor yellowColor];
+    
+    _newsScrollView.delegate = self;
+    [self.view addSubview:_newsScrollView];
 }
+- (void)loadData
+{
+    _topicScrollView.topicArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"NewsURLs" ofType:@"plist"]];
+}
+- (void)addChildVCs
+{
+    for (NSDictionary *dic in _topicScrollView.topicArray) {
+        WYNewsTableController *NewsTC = [[WYNewsTableController alloc] initWithStyle:UITableViewStylePlain];
+        NewsTC.url = [dic objectForKey:@"urlString"];
+        [self addChildViewController:NewsTC];
+    }
+    _newsScrollView.contentSize = CGSizeMake(kScreenWidth * _topicScrollView.topicArray.count, 0);
+}
+
+#pragma mark - button action
+- (void)newsFor24Hours
+{
+    
+}
+- (void)naviRightBarButtonAciton
+{
+    
+}
+
+
 @end

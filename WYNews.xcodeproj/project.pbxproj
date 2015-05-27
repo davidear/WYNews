@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		6B8981EE0E409A16C031930B /* libPods-WYNewsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52982EBDE6C6ACBCFAE34AF3 /* libPods-WYNewsTests.a */; };
+		B29013EA1B1562F400A9229F /* NewsURLs.plist in Resources */ = {isa = PBXBuildFile; fileRef = B29013E91B1562F400A9229F /* NewsURLs.plist */; };
+		B29013ED1B15641000A9229F /* WYCategoryLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B29013EC1B15641000A9229F /* WYCategoryLabel.m */; };
+		B29013F21B1573A400A9229F /* WYTopicScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B29013F11B1573A400A9229F /* WYTopicScrollView.m */; };
+		B29013F51B15A70800A9229F /* WYNewsScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B29013F41B15A70800A9229F /* WYNewsScrollView.m */; };
+		B29013FB1B15A93B00A9229F /* WYBaseScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B29013FA1B15A93B00A9229F /* WYBaseScrollView.m */; };
+		B29013FE1B15AB0E00A9229F /* WYNewsTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = B29013FD1B15AB0E00A9229F /* WYNewsTableController.m */; };
+		B29014021B15C25D00A9229F /* WYNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = B29014011B15C25D00A9229F /* WYNetwork.m */; };
 		B2E5CE861B14728E0061EC8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5CE851B14728E0061EC8B /* main.m */; };
 		B2E5CE891B14728E0061EC8B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5CE881B14728E0061EC8B /* AppDelegate.m */; };
 		B2E5CE911B14728E0061EC8B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2E5CE901B14728E0061EC8B /* Images.xcassets */; };
@@ -38,6 +45,21 @@
 		52982EBDE6C6ACBCFAE34AF3 /* libPods-WYNewsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WYNewsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8633C11E5F4B66D466BD92C7 /* Pods-WYNewsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WYNewsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WYNewsTests/Pods-WYNewsTests.release.xcconfig"; sourceTree = "<group>"; };
 		AA5C51468E6C2244E1627E16 /* Pods-WYNewsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WYNewsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WYNewsTests/Pods-WYNewsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B29013E91B1562F400A9229F /* NewsURLs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NewsURLs.plist; sourceTree = "<group>"; };
+		B29013EB1B15641000A9229F /* WYCategoryLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYCategoryLabel.h; sourceTree = "<group>"; };
+		B29013EC1B15641000A9229F /* WYCategoryLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYCategoryLabel.m; sourceTree = "<group>"; };
+		B29013EE1B15655700A9229F /* WYCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYCommon.h; sourceTree = "<group>"; };
+		B29013EF1B1565CE00A9229F /* WYNews-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WYNews-prefix.pch"; sourceTree = "<group>"; };
+		B29013F01B1573A400A9229F /* WYTopicScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYTopicScrollView.h; sourceTree = "<group>"; };
+		B29013F11B1573A400A9229F /* WYTopicScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYTopicScrollView.m; sourceTree = "<group>"; };
+		B29013F31B15A70800A9229F /* WYNewsScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYNewsScrollView.h; sourceTree = "<group>"; };
+		B29013F41B15A70800A9229F /* WYNewsScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYNewsScrollView.m; sourceTree = "<group>"; };
+		B29013F91B15A93B00A9229F /* WYBaseScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYBaseScrollView.h; sourceTree = "<group>"; };
+		B29013FA1B15A93B00A9229F /* WYBaseScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYBaseScrollView.m; sourceTree = "<group>"; };
+		B29013FC1B15AB0E00A9229F /* WYNewsTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYNewsTableController.h; sourceTree = "<group>"; };
+		B29013FD1B15AB0E00A9229F /* WYNewsTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYNewsTableController.m; sourceTree = "<group>"; };
+		B29014001B15C25D00A9229F /* WYNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYNetwork.h; sourceTree = "<group>"; };
+		B29014011B15C25D00A9229F /* WYNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYNetwork.m; sourceTree = "<group>"; };
 		B2E5CE801B14728E0061EC8B /* WYNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WYNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2E5CE841B14728E0061EC8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2E5CE851B14728E0061EC8B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -104,6 +126,40 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B29013F61B15A91300A9229F /* WYTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				B29013F71B15A91300A9229F /* Controller */,
+				B29013F81B15A91300A9229F /* View */,
+			);
+			path = WYTemplate;
+			sourceTree = "<group>";
+		};
+		B29013F71B15A91300A9229F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B29013F81B15A91300A9229F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B29013F91B15A93B00A9229F /* WYBaseScrollView.h */,
+				B29013FA1B15A93B00A9229F /* WYBaseScrollView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B29013FF1B15C24500A9229F /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				B29014001B15C25D00A9229F /* WYNetwork.h */,
+				B29014011B15C25D00A9229F /* WYNetwork.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 		B2E5CE771B14728E0061EC8B = {
 			isa = PBXGroup;
 			children = (
@@ -127,9 +183,13 @@
 		B2E5CE821B14728E0061EC8B /* WYNews */ = {
 			isa = PBXGroup;
 			children = (
+				B29013FF1B15C24500A9229F /* Tool */,
+				B29013F61B15A91300A9229F /* WYTemplate */,
 				B2E5CEB61B147AB60061EC8B /* Modules */,
 				B2E5CE871B14728E0061EC8B /* AppDelegate.h */,
 				B2E5CE881B14728E0061EC8B /* AppDelegate.m */,
+				B29013EE1B15655700A9229F /* WYCommon.h */,
+				B29013EF1B1565CE00A9229F /* WYNews-prefix.pch */,
 				B2E5CE831B14728E0061EC8B /* Supporting Files */,
 			);
 			path = WYNews;
@@ -274,6 +334,8 @@
 			children = (
 				B2E5CEC31B147AB60061EC8B /* WYNewsVC.h */,
 				B2E5CEC41B147AB60061EC8B /* WYNewsVC.m */,
+				B29013FC1B15AB0E00A9229F /* WYNewsTableController.h */,
+				B29013FD1B15AB0E00A9229F /* WYNewsTableController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -281,6 +343,7 @@
 		B2E5CEC51B147AB60061EC8B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B29013E91B1562F400A9229F /* NewsURLs.plist */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -295,6 +358,12 @@
 		B2E5CEC71B147AB60061EC8B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B29013EB1B15641000A9229F /* WYCategoryLabel.h */,
+				B29013EC1B15641000A9229F /* WYCategoryLabel.m */,
+				B29013F01B1573A400A9229F /* WYTopicScrollView.h */,
+				B29013F11B1573A400A9229F /* WYTopicScrollView.m */,
+				B29013F31B15A70800A9229F /* WYNewsScrollView.h */,
+				B29013F41B15A70800A9229F /* WYNewsScrollView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -494,6 +563,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B29013EA1B1562F400A9229F /* NewsURLs.plist in Resources */,
 				B2E5CE941B14728E0061EC8B /* LaunchScreen.xib in Resources */,
 				B2E5CE911B14728E0061EC8B /* Images.xcassets in Resources */,
 			);
@@ -546,15 +616,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B29013ED1B15641000A9229F /* WYCategoryLabel.m in Sources */,
 				B2E5CEDE1B147AFE0061EC8B /* WYVedioVC.m in Sources */,
 				B2E5CE891B14728E0061EC8B /* AppDelegate.m in Sources */,
 				B2E5CEE81B1496180061EC8B /* Dock.m in Sources */,
+				B29013F21B1573A400A9229F /* WYTopicScrollView.m in Sources */,
 				B2E5CEEA1B1496180061EC8B /* DockItem.m in Sources */,
 				B2E5CED51B147ACB0061EC8B /* WYDiscoverVC.m in Sources */,
 				B2E5CEDB1B147AF00061EC8B /* WYReadVC.m in Sources */,
 				B2E5CED21B147AB60061EC8B /* WYNewsVC.m in Sources */,
 				B2E5CED81B147ADB0061EC8B /* WYMeVC.m in Sources */,
+				B29013FB1B15A93B00A9229F /* WYBaseScrollView.m in Sources */,
+				B29013FE1B15AB0E00A9229F /* WYNewsTableController.m in Sources */,
+				B29013F51B15A70800A9229F /* WYNewsScrollView.m in Sources */,
 				B2E5CEE91B1496180061EC8B /* DockController.m in Sources */,
+				B29014021B15C25D00A9229F /* WYNetwork.m in Sources */,
 				B2E5CEED1B1496430061EC8B /* WYMainDockVC.m in Sources */,
 				B2E5CE861B14728E0061EC8B /* main.m in Sources */,
 			);
@@ -672,9 +748,17 @@
 		};
 		B2E5CEA41B14728E0061EC8B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA5C51468E6C2244E1627E16 /* Pods-WYNewsTests.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				EXECUTABLE_PREFIX = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WYNews/WYNews-prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				INFOPLIST_FILE = WYNews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -683,9 +767,17 @@
 		};
 		B2E5CEA51B14728E0061EC8B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8633C11E5F4B66D466BD92C7 /* Pods-WYNewsTests.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				EXECUTABLE_PREFIX = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WYNews/WYNews-prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				INFOPLIST_FILE = WYNews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
