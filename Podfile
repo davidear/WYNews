@@ -10,5 +10,6 @@ target 'WYNewsTests' do
 	pod 'AFNetworking', '~> 2.5.4'
 	pod 'Colours'
 	pod 'MJRefresh'
+    pod 'MBProgressHUD'
 end
 

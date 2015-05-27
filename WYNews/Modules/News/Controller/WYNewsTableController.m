@@ -8,6 +8,8 @@
 
 #import "WYNewsTableController.h"
 #import "MJRefresh.h"
+#import "WYNetwork.h"
+#import "WYNews.h"
 @interface WYNewsTableController ()
 
 @end
@@ -17,6 +19,14 @@
     NSMutableArray *_dataArray;
 }
 static NSString *reuseIdentifier = @"NewsIdentity";
+- (instancetype)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {
+        _dataArray = [NSMutableArray array];
+    }
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -30,6 +40,24 @@ static NSString *reuseIdentifier = @"NewsIdentity";
 - (void)setUrl:(NSString *)url
 {
     _url = url;
+    [[WYNetwork sharedWYNetwork] HttpGetNews:_url success:^(id responseObject) {
+        NSLog(@"abc");
+        if (![responseObject isKindOfClass:[NSDictionary class]]) {
+            return;
+        }
+        if (![[responseObject allObjects] isKindOfClass:[NSArray class]]) {
+            return;
+        }
+//            NSMutableArray *mutArr = [NSMutableArray array];
+            for (NSDictionary *dic in [[responseObject allObjects] lastObject]) {
+                WYNews *news = [[WYNews alloc] initWithDic:dic];
+//                [mutArr addObject:news];
+                [_dataArray addObject:news];
+            }
+            [self.tableView reloadData];
+    } failure:^(NSError *error) {
+        NSLog(@"\nerror is %@", [error localizedDescription]);
+    }];
 }
 #pragma mark - Table view data source
 
@@ -40,7 +68,7 @@ static NSString *reuseIdentifier = @"NewsIdentity";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return _dataArray ? 0 : _dataArray.count;
+    return _dataArray ?  _dataArray.count : 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -50,6 +78,8 @@ static NSString *reuseIdentifier = @"NewsIdentity";
     }
     // Configure the cell...
     cell.backgroundColor = [UIColor purpleColor];
+    WYNews *news = (WYNews *)_dataArray[indexPath.row];
+    cell.textLabel.text = news.title;
     return cell;
 }
 

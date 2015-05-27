@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "AFNetworking.h"
+#import "Singleton.h"
 @interface WYNetwork : NSObject
+single_interface(WYNetwork)
+@property (strong, nonatomic) AFHTTPSessionManager *sessionManager;
+@property (strong, nonatomic) AFNetworkReachabilityManager *reachabilityManager;
 
++ (void)startEngine;
+//- (void)HttpPostComment:(NSDictionary *)dic success:(void(^)(id responseObject))success failure:(void(^)(NSError *error))failure;
+
+- (void)HttpGetNews:(NSString *)urlString success:(void(^)(id responseObject))success failure:(void(^)(NSError *error))failure;
 @end

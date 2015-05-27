@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-WYNewsTests-MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-WYNewsTests-MJRefresh.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,27 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0A24189B7E856DD81895C67B</key>
+		<key>00730903C23C9CC4ED349B4E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3857E6D4FDE1B3DDCF1D78EA</key>
+		<key>4CDBFD0B504AF2BDC90C2F0F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3DC7FE6CBDF9E44382D474CD</key>
+		<key>59E8EFE86AC71288713CC12D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7A9D524304C81D8BFD1F5C35</key>
+		<key>9E872ECB81795F5C2C548B68</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D9FF97F8B33A7609ACD39072</key>
+		<key>A135BE66B7F70DE15D19D2B0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F432284475E0D304F56B68A6</key>
 		<dict>
 			<key>primary</key>
 			<true/>

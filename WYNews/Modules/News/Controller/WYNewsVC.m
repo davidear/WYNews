@@ -69,6 +69,13 @@
         NewsTC.url = [dic objectForKey:@"urlString"];
         [self addChildViewController:NewsTC];
     }
+    
+    for (int i = 0; i < self.childViewControllers.count; i++) {
+//        CGSize size = CGSizeMake(kScreenWidth, _newsScrollView.bounds.size.height);
+        WYNewsTableController *newsTC = self.childViewControllers[i];
+        newsTC.tableView.frame = (CGRect){CGPointMake(kScreenWidth * i, 0), _newsScrollView.bounds.size};
+        [_newsScrollView addSubview:newsTC.tableView];
+    }
     _newsScrollView.contentSize = CGSizeMake(kScreenWidth * _topicScrollView.topicArray.count, 0);
 }
 
