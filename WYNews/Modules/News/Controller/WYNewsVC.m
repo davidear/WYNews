@@ -89,5 +89,14 @@
     
 }
 
+#pragma mark - scrollView delegate
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if (scrollView == _newsScrollView) {
+//        [_topicScrollView setContentOffset:CGPointMake(scrollView.contentOffset.x * _topicScrollView.contentSize.width / scrollView.contentSize.width, 0) animated:YES];
+        _topicScrollView.offsetX = scrollView.contentOffset.x / scrollView.bounds.size.width;
+    }
+    
+}
 @end

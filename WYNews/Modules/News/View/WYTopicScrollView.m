@@ -10,6 +10,9 @@
 #import "WYCategoryLabel.h"
 #define kWidthMargin        0
 @implementation WYTopicScrollView
+{
+    CGFloat _offsetX;
+}
 - (void)setupUI
 {
     [super setupUI];
@@ -32,5 +35,22 @@
     self.contentSize = CGSizeMake(CGRectGetMaxX([self.subviews.lastObject frame]) + kWidthMargin, 0);
 }
 
+-(void)setOffsetX:(CGFloat)offsetX
+{
+    _offsetX = offsetX;
+    int index = (int)offsetX;
+    if (index == 2) {
+        NSLog(@"");
+    }
+    WYCategoryLabel *oldLabel = self.subviews[index];
+    WYCategoryLabel *newLabel = self.subviews[index + 1];
+    NSLog(@"old is %d , new is %d+1\n", index, index);
+    oldLabel.scale = 1 - offsetX;
+    newLabel.scale = offsetX;
+}
 
+- (CGFloat)offsetX
+{
+    return _offsetX;
+}
 @end

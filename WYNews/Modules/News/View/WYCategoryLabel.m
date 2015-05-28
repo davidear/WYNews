@@ -37,7 +37,9 @@
 - (void)setScale:(CGFloat)scale
 {
     _scale = scale;
-    self.textColor = [UIColor colorWithRed:221.0/255*scale green:50.0/255*scale blue:55/255*scale alpha:1];
+    NSLog(@"scale is %f", _scale);
+    self.textColor = [UIColor colorWithRed:scale * 221.0/255 green:scale * 50.0/255 blue:scale * 55/255 alpha:1];
+    NSLog(@"\ncolor is %@", self.textColor);
 //    self.layer.transform = CATransform3DMakeScale(1 + 0.3 * scale, 1 + 0.3 * scale, 1);
     self.transform = CGAffineTransformMakeScale(1 + 0.3 * scale, 1 + 0.3 * scale);
 }
