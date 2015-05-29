@@ -42,10 +42,13 @@
     int index = (int)abc_offsetX;
     float delta = abc_offsetX - index;
     WYCategoryLabel *oldLabel = self.subviews[index];
-    WYCategoryLabel *newLabel = self.subviews[index + 1];
     NSLog(@"old is %d , new is %d+1\n", index, index);
     oldLabel.scale = 1 - delta;
-    newLabel.scale = delta;
+    //最后一个
+    if (index < _topicArray.count - 1) {
+        WYCategoryLabel *newLabel = self.subviews[index + 1];
+        newLabel.scale = delta;
+    }
 }
 
 - (CGFloat)offsetX

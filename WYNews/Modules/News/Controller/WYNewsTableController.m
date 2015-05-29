@@ -77,7 +77,7 @@ static NSString *reuseIdentifier = @"NewsIdentity";
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
     }
     // Configure the cell...
-    cell.backgroundColor = [UIColor purpleColor];
+//    cell.backgroundColor = [UIColor purpleColor];
     WYNews *news = (WYNews *)_dataArray[indexPath.row];
     cell.textLabel.text = news.title;
     return cell;

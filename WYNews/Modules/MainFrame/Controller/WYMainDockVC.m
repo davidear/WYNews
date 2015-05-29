@@ -25,7 +25,7 @@
     
     [self addChildVC];
     
-    [_dock setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"tab-bar-background"]]];
+    [_dock setBackgroundColor:[UIColor whiteColor]];
     [self addDockItems];
 }
 

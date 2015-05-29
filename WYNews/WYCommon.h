@@ -14,6 +14,8 @@
 #define kScreenHeight               [UIScreen mainScreen].bounds.size.height
 #define kWYRed                      [UIColor colorWithRed:221.0/255 green:50.0/255 blue:55.0/255 alpha:1]
 
+//dock
+#define kDockBgColor                [UIColor colorWithRed:133.0/255 green:133.0/255 blue:133.0/255 alpha:1]
 //Network
 #define kWYNetworkBaseURLStr        @"http://c.m.163.com/"
 //Dock

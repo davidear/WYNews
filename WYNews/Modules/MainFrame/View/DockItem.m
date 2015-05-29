@@ -24,6 +24,9 @@
         // 2.文字大小
         self.titleLabel.font = [UIFont systemFontOfSize:11];
         
+        // 5.文字颜色
+        [self setTitleColor:kDockBgColor forState:UIControlStateNormal];
+        
         // 3.图片的内容模式
         self.imageView.contentMode = UIViewContentModeCenter;
         

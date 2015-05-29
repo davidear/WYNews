@@ -61,6 +61,7 @@
 - (void)loadData
 {
     _topicScrollView.topicArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"NewsURLs" ofType:@"plist"]];
+    _topicScrollView.offsetX = 0;
 }
 - (void)addChildVCs
 {
