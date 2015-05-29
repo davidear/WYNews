@@ -90,6 +90,11 @@
 }
 
 #pragma mark - scrollView delegate
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
+{
+    
+}
+
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {

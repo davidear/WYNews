@@ -38,15 +38,14 @@
 -(void)setOffsetX:(CGFloat)offsetX
 {
     _offsetX = offsetX;
-    int index = (int)offsetX;
-    if (index == 2) {
-        NSLog(@"");
-    }
+    float abc_offsetX = ABS(_offsetX);
+    int index = (int)abc_offsetX;
+    float delta = abc_offsetX - index;
     WYCategoryLabel *oldLabel = self.subviews[index];
     WYCategoryLabel *newLabel = self.subviews[index + 1];
     NSLog(@"old is %d , new is %d+1\n", index, index);
-    oldLabel.scale = 1 - offsetX;
-    newLabel.scale = offsetX;
+    oldLabel.scale = 1 - delta;
+    newLabel.scale = delta;
 }
 
 - (CGFloat)offsetX

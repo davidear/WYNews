@@ -42,5 +42,6 @@
     NSLog(@"\ncolor is %@", self.textColor);
 //    self.layer.transform = CATransform3DMakeScale(1 + 0.3 * scale, 1 + 0.3 * scale, 1);
     self.transform = CGAffineTransformMakeScale(1 + 0.3 * scale, 1 + 0.3 * scale);
+
 }
 @end
