@@ -22,5 +22,6 @@
 #define kDockHeight 44
 
 //WYNewsVC
-#define kTopicScrollViewHeight      35
+#define kTopicHeaderHeight      36
+#define kTopicHeaderBgColor         [UIColor colorWithRed:246.0/255 green:246.0/255 blue:246.0/255 alpha:1]
 #endif

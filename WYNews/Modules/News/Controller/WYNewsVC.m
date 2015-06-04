@@ -7,6 +7,7 @@
 //
 
 #import "WYNewsVC.h"
+#import "WYTopicHeader.h"
 #import "WYTopicScrollView.h"
 #import "WYNewsScrollView.h"
 #import "WYNewsTableController.h"
@@ -16,6 +17,7 @@
 
 @implementation WYNewsVC
 {
+    WYTopicHeader *_header;
     WYTopicScrollView *_topicScrollView;
     WYNewsScrollView *_newsScrollView;
 }
@@ -48,15 +50,15 @@
     [button2 addTarget:self action:@selector(naviRightBarButtonAciton) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button2];
     
-    _topicScrollView = [[WYTopicScrollView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kTopicScrollViewHeight)];
-    _topicScrollView.backgroundColor = [UIColor blueColor];
-    [self.view addSubview:_topicScrollView];
-    
-    _newsScrollView = [[WYNewsScrollView alloc] initWithFrame:CGRectMake(0, kTopicScrollViewHeight, kScreenWidth, kScreenHeight - kTopicScrollViewHeight - kDockHeight - 64)];
+    _newsScrollView = [[WYNewsScrollView alloc] initWithFrame:CGRectMake(0, kTopicHeaderHeight, kScreenWidth, kScreenHeight - kTopicHeaderHeight - kDockHeight - 64)];
     _newsScrollView.backgroundColor = [UIColor yellowColor];
-    
     _newsScrollView.delegate = self;
     [self.view addSubview:_newsScrollView];
+    
+    _header = [[WYTopicHeader alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kTopicHeaderHeight)];
+    //    _header.backgroundColor = [UIColor blueColor];
+    _topicScrollView = _header.topicScrollView;
+    [self.view addSubview:_header];
 }
 - (void)loadData
 {

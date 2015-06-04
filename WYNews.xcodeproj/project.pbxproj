@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6B8981EE0E409A16C031930B /* libPods-WYNewsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52982EBDE6C6ACBCFAE34AF3 /* libPods-WYNewsTests.a */; };
+		B25CA4261B208F240077FEB5 /* WYTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = B25CA4251B208F240077FEB5 /* WYTopic.m */; };
+		B25CA42A1B208F960077FEB5 /* WYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B25CA4291B208F960077FEB5 /* WYModel.m */; };
 		B29013EA1B1562F400A9229F /* NewsURLs.plist in Resources */ = {isa = PBXBuildFile; fileRef = B29013E91B1562F400A9229F /* NewsURLs.plist */; };
 		B29013ED1B15641000A9229F /* WYCategoryLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B29013EC1B15641000A9229F /* WYCategoryLabel.m */; };
 		B29013F21B1573A400A9229F /* WYTopicScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B29013F11B1573A400A9229F /* WYTopicScrollView.m */; };
@@ -31,6 +33,10 @@
 		B2E5CEE91B1496180061EC8B /* DockController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5CEE51B1496180061EC8B /* DockController.m */; };
 		B2E5CEEA1B1496180061EC8B /* DockItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5CEE71B1496180061EC8B /* DockItem.m */; };
 		B2E5CEED1B1496430061EC8B /* WYMainDockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5CEEC1B1496430061EC8B /* WYMainDockVC.m */; };
+		B2F1E3ED1B20596E006C893F /* WYButtonChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F1E3E81B20596E006C893F /* WYButtonChooseView.m */; };
+		B2F1E3EE1B20596E006C893F /* WYButtonChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F1E3EA1B20596E006C893F /* WYButtonChooseViewController.m */; };
+		B2F1E3EF1B20596E006C893F /* WYLabelButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F1E3EC1B20596E006C893F /* WYLabelButton.m */; };
+		B2F1E3F21B206783006C893F /* WYTopicHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F1E3F11B206783006C893F /* WYTopicHeader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +53,11 @@
 		52982EBDE6C6ACBCFAE34AF3 /* libPods-WYNewsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WYNewsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8633C11E5F4B66D466BD92C7 /* Pods-WYNewsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WYNewsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WYNewsTests/Pods-WYNewsTests.release.xcconfig"; sourceTree = "<group>"; };
 		AA5C51468E6C2244E1627E16 /* Pods-WYNewsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WYNewsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WYNewsTests/Pods-WYNewsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B25CA4231B208E050077FEB5 /* APIInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIInfo.h; sourceTree = "<group>"; };
+		B25CA4241B208F240077FEB5 /* WYTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYTopic.h; sourceTree = "<group>"; };
+		B25CA4251B208F240077FEB5 /* WYTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYTopic.m; sourceTree = "<group>"; };
+		B25CA4281B208F960077FEB5 /* WYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYModel.h; sourceTree = "<group>"; };
+		B25CA4291B208F960077FEB5 /* WYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYModel.m; sourceTree = "<group>"; };
 		B29013E91B1562F400A9229F /* NewsURLs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NewsURLs.plist; sourceTree = "<group>"; };
 		B29013EB1B15641000A9229F /* WYCategoryLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYCategoryLabel.h; sourceTree = "<group>"; };
 		B29013EC1B15641000A9229F /* WYCategoryLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYCategoryLabel.m; sourceTree = "<group>"; };
@@ -95,6 +106,14 @@
 		B2E5CEE71B1496180061EC8B /* DockItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DockItem.m; sourceTree = "<group>"; };
 		B2E5CEEB1B1496430061EC8B /* WYMainDockVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYMainDockVC.h; sourceTree = "<group>"; };
 		B2E5CEEC1B1496430061EC8B /* WYMainDockVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYMainDockVC.m; sourceTree = "<group>"; };
+		B2F1E3E71B20596E006C893F /* WYButtonChooseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYButtonChooseView.h; sourceTree = "<group>"; };
+		B2F1E3E81B20596E006C893F /* WYButtonChooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYButtonChooseView.m; sourceTree = "<group>"; };
+		B2F1E3E91B20596E006C893F /* WYButtonChooseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYButtonChooseViewController.h; sourceTree = "<group>"; };
+		B2F1E3EA1B20596E006C893F /* WYButtonChooseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYButtonChooseViewController.m; sourceTree = "<group>"; };
+		B2F1E3EB1B20596E006C893F /* WYLabelButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYLabelButton.h; sourceTree = "<group>"; };
+		B2F1E3EC1B20596E006C893F /* WYLabelButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYLabelButton.m; sourceTree = "<group>"; };
+		B2F1E3F01B206783006C893F /* WYTopicHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYTopicHeader.h; sourceTree = "<group>"; };
+		B2F1E3F11B206783006C893F /* WYTopicHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYTopicHeader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,9 +152,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B25CA4271B208F860077FEB5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B25CA4281B208F960077FEB5 /* WYModel.h */,
+				B25CA4291B208F960077FEB5 /* WYModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B29013F61B15A91300A9229F /* WYTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				B25CA4271B208F860077FEB5 /* Model */,
 				B29013F71B15A91300A9229F /* Controller */,
 				B29013F81B15A91300A9229F /* View */,
 			);
@@ -199,6 +228,7 @@
 				B2E5CE881B14728E0061EC8B /* AppDelegate.m */,
 				B29013EE1B15655700A9229F /* WYCommon.h */,
 				B29014031B15C4D900A9229F /* Singleton.h */,
+				B25CA4231B208E050077FEB5 /* APIInfo.h */,
 				B29013EF1B1565CE00A9229F /* WYNews-prefix.pch */,
 				B2E5CE831B14728E0061EC8B /* Supporting Files */,
 			);
@@ -331,6 +361,7 @@
 		B2E5CEC11B147AB60061EC8B /* News */ = {
 			isa = PBXGroup;
 			children = (
+				B2F1E3E61B20596E006C893F /* Widget */,
 				B2E5CEC21B147AB60061EC8B /* Controller */,
 				B2E5CEC51B147AB60061EC8B /* Model */,
 				B2E5CEC61B147AB60061EC8B /* Tool */,
@@ -356,6 +387,8 @@
 				B29013E91B1562F400A9229F /* NewsURLs.plist */,
 				B29014071B15D9E700A9229F /* WYNews.h */,
 				B29014081B15D9E700A9229F /* WYNews.m */,
+				B25CA4241B208F240077FEB5 /* WYTopic.h */,
+				B25CA4251B208F240077FEB5 /* WYTopic.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -370,6 +403,8 @@
 		B2E5CEC71B147AB60061EC8B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B2F1E3F01B206783006C893F /* WYTopicHeader.h */,
+				B2F1E3F11B206783006C893F /* WYTopicHeader.m */,
 				B29013EB1B15641000A9229F /* WYCategoryLabel.h */,
 				B29013EC1B15641000A9229F /* WYCategoryLabel.m */,
 				B29013F01B1573A400A9229F /* WYTopicScrollView.h */,
@@ -491,6 +526,19 @@
 				B2E5CEE71B1496180061EC8B /* DockItem.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B2F1E3E61B20596E006C893F /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				B2F1E3E71B20596E006C893F /* WYButtonChooseView.h */,
+				B2F1E3E81B20596E006C893F /* WYButtonChooseView.m */,
+				B2F1E3E91B20596E006C893F /* WYButtonChooseViewController.h */,
+				B2F1E3EA1B20596E006C893F /* WYButtonChooseViewController.m */,
+				B2F1E3EB1B20596E006C893F /* WYLabelButton.h */,
+				B2F1E3EC1B20596E006C893F /* WYLabelButton.m */,
+			);
+			path = Widget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -631,15 +679,21 @@
 				B29013ED1B15641000A9229F /* WYCategoryLabel.m in Sources */,
 				B2E5CEDE1B147AFE0061EC8B /* WYVedioVC.m in Sources */,
 				B29014061B15C86700A9229F /* WYtool.m in Sources */,
+				B25CA4261B208F240077FEB5 /* WYTopic.m in Sources */,
 				B2E5CE891B14728E0061EC8B /* AppDelegate.m in Sources */,
+				B2F1E3EE1B20596E006C893F /* WYButtonChooseViewController.m in Sources */,
 				B2E5CEE81B1496180061EC8B /* Dock.m in Sources */,
 				B29013F21B1573A400A9229F /* WYTopicScrollView.m in Sources */,
 				B2E5CEEA1B1496180061EC8B /* DockItem.m in Sources */,
 				B2E5CED51B147ACB0061EC8B /* WYDiscoverVC.m in Sources */,
 				B2E5CEDB1B147AF00061EC8B /* WYReadVC.m in Sources */,
 				B2E5CED21B147AB60061EC8B /* WYNewsVC.m in Sources */,
+				B2F1E3F21B206783006C893F /* WYTopicHeader.m in Sources */,
 				B2E5CED81B147ADB0061EC8B /* WYMeVC.m in Sources */,
+				B2F1E3ED1B20596E006C893F /* WYButtonChooseView.m in Sources */,
+				B25CA42A1B208F960077FEB5 /* WYModel.m in Sources */,
 				B29013FB1B15A93B00A9229F /* WYBaseScrollView.m in Sources */,
+				B2F1E3EF1B20596E006C893F /* WYLabelButton.m in Sources */,
 				B29013FE1B15AB0E00A9229F /* WYNewsTableController.m in Sources */,
 				B29013F51B15A70800A9229F /* WYNewsScrollView.m in Sources */,
 				B2E5CEE91B1496180061EC8B /* DockController.m in Sources */,
