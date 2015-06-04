@@ -55,7 +55,7 @@
 
 - (void)refreshView
 {
-    self.backgroundColor = [UIColor blueColor];
+//    self.backgroundColor = [UIColor blueColor];
     [UIView animateWithDuration:kDuration animations:^{
         
         for (int i  = 0; i < self.buttonArray.count; i++) {

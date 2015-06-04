@@ -26,7 +26,7 @@
 {
     [super setText:text];
     CGSize size = [text sizeWithAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:kTopicLabelFont]}];
-    size.height = kTopicScrollViewHeight;
+    size.height = kTopicHeaderHeight;
     size.width += size.width + kLabelSideMargin;
     self.frame = (CGRect){self.bounds.origin, size};
 }

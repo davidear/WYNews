@@ -32,9 +32,9 @@
 {
     _selectedArray = selectedArray;
     if (_selectedArray != nil) {
-        for (NSString *title in _selectedArray) {
-            [_topChooseView addButtonWith:title position:CGPointZero];
-            [_bottomChooseView addButtonWith:title position:CGPointZero];
+        for (NSDictionary *dic in _selectedArray) {
+            [_topChooseView addButtonWith:[dic objectForKey:@"title"] position:CGPointZero];
+            [_bottomChooseView addButtonWith:[dic objectForKey:@"title"] position:CGPointZero];
         }
     }
     [self refreshView];
@@ -44,9 +44,9 @@
 {
     _unSelectedArray = unSelectedArray;
     if (_unSelectedArray != nil) {
-        for (NSString *title in _unSelectedArray) {
-            [_topChooseView addButtonWith:title position:CGPointZero];
-            [_bottomChooseView addButtonWith:title position:CGPointZero];
+        for (NSDictionary *dic in _unSelectedArray) {
+            [_topChooseView addButtonWith:[dic objectForKey:@"title"] position:CGPointZero];
+            [_bottomChooseView addButtonWith:[dic objectForKey:@"title"] position:CGPointZero];
         }
     }
     [self refreshView];
@@ -88,9 +88,11 @@
 {
 //    self.view.clipsToBounds = YES;
     [self prefersStatusBarHidden];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor colorWithWhite:1 alpha:0.95];
+//    self.view.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.8];
     
     _header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, kHeaderHeight)];
+    _header.backgroundColor = kTopicHeaderBgColor;
     [self.view addSubview:_header];
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(kMarginW, 0, 80, kHeaderHeight)];

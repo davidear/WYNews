@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface WYButtonChooseViewController : UIViewController
-@property (strong, nonatomic) NSMutableArray *selectedArray;
-@property (strong, nonatomic) NSMutableArray *unSelectedArray;
+@property (strong, nonatomic) NSMutableArray *selectedArray;//装字典
+@property (strong, nonatomic) NSMutableArray *unSelectedArray;//装字典
 
 
 - (void)showInView:(UIView *)view;

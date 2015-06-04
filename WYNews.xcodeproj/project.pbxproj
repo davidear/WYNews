@@ -34,6 +34,7 @@
 		B2F1E3ED1B20596E006C893F /* WYButtonChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F1E3E81B20596E006C893F /* WYButtonChooseView.m */; };
 		B2F1E3EE1B20596E006C893F /* WYButtonChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F1E3EA1B20596E006C893F /* WYButtonChooseViewController.m */; };
 		B2F1E3EF1B20596E006C893F /* WYLabelButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F1E3EC1B20596E006C893F /* WYLabelButton.m */; };
+		B2F1E3F21B206783006C893F /* WYTopicHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F1E3F11B206783006C893F /* WYTopicHeader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,8 @@
 		B2F1E3EA1B20596E006C893F /* WYButtonChooseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYButtonChooseViewController.m; sourceTree = "<group>"; };
 		B2F1E3EB1B20596E006C893F /* WYLabelButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYLabelButton.h; sourceTree = "<group>"; };
 		B2F1E3EC1B20596E006C893F /* WYLabelButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYLabelButton.m; sourceTree = "<group>"; };
+		B2F1E3F01B206783006C893F /* WYTopicHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYTopicHeader.h; sourceTree = "<group>"; };
+		B2F1E3F11B206783006C893F /* WYTopicHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYTopicHeader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -380,6 +383,8 @@
 		B2E5CEC71B147AB60061EC8B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B2F1E3F01B206783006C893F /* WYTopicHeader.h */,
+				B2F1E3F11B206783006C893F /* WYTopicHeader.m */,
 				B29013EB1B15641000A9229F /* WYCategoryLabel.h */,
 				B29013EC1B15641000A9229F /* WYCategoryLabel.m */,
 				B29013F01B1573A400A9229F /* WYTopicScrollView.h */,
@@ -662,6 +667,7 @@
 				B2E5CED51B147ACB0061EC8B /* WYDiscoverVC.m in Sources */,
 				B2E5CEDB1B147AF00061EC8B /* WYReadVC.m in Sources */,
 				B2E5CED21B147AB60061EC8B /* WYNewsVC.m in Sources */,
+				B2F1E3F21B206783006C893F /* WYTopicHeader.m in Sources */,
 				B2E5CED81B147ADB0061EC8B /* WYMeVC.m in Sources */,
 				B2F1E3ED1B20596E006C893F /* WYButtonChooseView.m in Sources */,
 				B29013FB1B15A93B00A9229F /* WYBaseScrollView.m in Sources */,
