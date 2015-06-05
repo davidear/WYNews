@@ -17,7 +17,8 @@
 //dock
 #define kDockBgColor                [UIColor colorWithRed:133.0/255 green:133.0/255 blue:133.0/255 alpha:1]
 //Network
-#define kWYNetworkBaseURLStr        @"http://c.m.163.com/"
+#define kWYNetworkBaseURLStr                @"http://c.m.163.com/"
+#define kWYNetworkTopicListURLStr           @"/nc/topicset/ios/subscribe/manage/listspecial.html"
 //Dock
 #define kDockHeight 44
 

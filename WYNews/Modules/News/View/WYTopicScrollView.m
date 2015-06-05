@@ -8,6 +8,7 @@
 
 #import "WYTopicScrollView.h"
 #import "WYCategoryLabel.h"
+#import "WYTopic.h"
 #define kWidthMargin        0
 @implementation WYTopicScrollView
 {
@@ -22,8 +23,10 @@
 {
     _topicArray = topicArray;
     for (int i = 0; i < _topicArray.count; i++) {
+        WYTopic *topic = _topicArray[i];
+        
         WYCategoryLabel *label = [[WYCategoryLabel alloc] init];
-        label.text = [_topicArray[i] objectForKey:@"title"];;
+        label.text = topic.tname;
         if (self.subviews.count == 0) {
             label.frame = (CGRect){CGPointMake(kWidthMargin, 0), label.bounds.size};
         }else {

@@ -8,6 +8,7 @@
 
 #import "WYButtonChooseViewController.h"
 #import "WYButtonChooseView.h"
+#import "WYTopic.h"
 #define kHeaderHeight       36
 #define kDefaultY           20
 @interface WYButtonChooseViewController () <LabelChooseDelegate>
@@ -32,9 +33,9 @@
 {
     _selectedArray = selectedArray;
     if (_selectedArray != nil) {
-        for (NSDictionary *dic in _selectedArray) {
-            [_topChooseView addButtonWith:[dic objectForKey:@"title"] position:CGPointZero];
-            [_bottomChooseView addButtonWith:[dic objectForKey:@"title"] position:CGPointZero];
+        for (WYTopic *topic in _selectedArray) {
+            [_topChooseView addButtonWith:topic.tname position:CGPointZero];
+            [_bottomChooseView addButtonWith:topic.tname position:CGPointZero];
         }
     }
     [self refreshView];
@@ -44,9 +45,9 @@
 {
     _unSelectedArray = unSelectedArray;
     if (_unSelectedArray != nil) {
-        for (NSDictionary *dic in _unSelectedArray) {
-            [_topChooseView addButtonWith:[dic objectForKey:@"title"] position:CGPointZero];
-            [_bottomChooseView addButtonWith:[dic objectForKey:@"title"] position:CGPointZero];
+        for (WYTopic *topic in _unSelectedArray) {
+            [_topChooseView addButtonWith:topic.tname position:CGPointZero];
+            [_bottomChooseView addButtonWith:topic.tname position:CGPointZero];
         }
     }
     [self refreshView];

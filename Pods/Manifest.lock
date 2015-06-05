@@ -22,6 +22,7 @@ PODS:
     - AFNetworking/NSURLSession
   - Colours (5.6.2)
   - MBProgressHUD (0.9.1)
+  - MJExtension (2.1.1)
   - MJRefresh (1.4.6)
   - SDWebImage (3.7.2):
     - SDWebImage/Core (= 3.7.2)
@@ -31,6 +32,7 @@ DEPENDENCIES:
   - AFNetworking (~> 2.5.4)
   - Colours
   - MBProgressHUD
+  - MJExtension
   - MJRefresh
   - SDWebImage (~> 3.7.2)
 
@@ -38,6 +40,7 @@ SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   Colours: 0afd4c3429656880fd4cff350ca3bf0ab86ca348
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  MJExtension: 4b8a628ec7764a4b3c6c0e7261ec0687cf32ff20
   MJRefresh: 2eaa3fd8f67fbb86497840fb0167446f7eb61dc7
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
 

@@ -7,10 +7,13 @@
 //
 
 #import "WYNewsVC.h"
+#import "WYNetwork.h"
 #import "WYTopicHeader.h"
 #import "WYTopicScrollView.h"
 #import "WYNewsScrollView.h"
 #import "WYNewsTableController.h"
+
+#import "WYTopic.h"
 @interface WYNewsVC () <UIScrollViewDelegate>
 
 @end
@@ -26,7 +29,7 @@
     // Do any additional setup after loading the view.
     [self initSubviews];
     [self loadData];
-    [self addChildVCs];
+//    [self addChildVCs];
 }
 - (void)initSubviews
 {
@@ -62,14 +65,39 @@
 }
 - (void)loadData
 {
-    _topicScrollView.topicArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"NewsURLs" ofType:@"plist"]];
-    _topicScrollView.offsetX = 0;
+//    _topicScrollView.topicArray =
+    [[WYNetwork sharedWYNetwork] HttpGet:kWYNetworkTopicListURLStr parameter:nil success:^(id responseObject) {
+        NSLog(@"responseObject is %@", responseObject);
+        if (responseObject != nil) {
+            NSMutableArray *mutArray = [NSMutableArray array];
+            NSArray *array = [responseObject objectForKey:@"tList"];
+            for (NSDictionary *dic in array) {
+                WYTopic *topic = [[WYTopic alloc] initWithDic:dic];
+                [mutArray addObject:topic];
+            }
+            _topicScrollView.topicArray = [NSArray arrayWithArray:mutArray];
+            
+            [self addChildVCs];
+            _topicScrollView.offsetX = 0;
+        }
+//        for (WYNewsTableController *newsTC in self.childViewControllers) {
+//            newsTC.url = [dic objectForKey:@"urlString"];
+//        }
+        
+    } failure:^(NSError *error) {
+        
+    }];
+    
+//    _topicScrollView.topicArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"NewsURLs" ofType:@"plist"]];
+    
 }
 - (void)addChildVCs
 {
-    for (NSDictionary *dic in _topicScrollView.topicArray) {
+    for (WYTopic *topic in _topicScrollView.topicArray) {
         WYNewsTableController *NewsTC = [[WYNewsTableController alloc] initWithStyle:UITableViewStylePlain];
-        NewsTC.url = [dic objectForKey:@"urlString"];
+        NewsTC.url = [NSString stringWithFormat:@"/nc/article/list/%@/0-20.html",topic.tid];
+//         "tid":"T1370583240249"
+//        /nc/article/list/T1348649654285/0-20.html
         [self addChildViewController:NewsTC];
     }
     

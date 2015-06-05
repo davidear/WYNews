@@ -17,5 +17,9 @@ single_interface(WYNetwork)
 + (void)startEngine;
 //- (void)HttpPostComment:(NSDictionary *)dic success:(void(^)(id responseObject))success failure:(void(^)(NSError *error))failure;
 
+- (void)HttpGet:(NSString *)URLString parameter:(id)parameters success:(void(^)(id responseObject))success failure:(void(^)(NSError *error))failure;
+
+
 - (void)HttpGetNews:(NSString *)urlString success:(void(^)(id responseObject))success failure:(void(^)(NSError *error))failure;
+
 @end
