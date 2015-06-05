@@ -34,7 +34,7 @@
         }
         [self addSubview:label];
     }
-    
+    self.offsetX = 0;
     self.contentSize = CGSizeMake(CGRectGetMaxX([self.subviews.lastObject frame]) + kWidthMargin, 0);
 }
 

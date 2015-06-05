@@ -20,7 +20,7 @@
 @end
 @interface WYButtonChooseView : UIScrollView
 @property (weak, nonatomic) id<LabelChooseDelegate> chooseDelegate;
-@property (strong, nonatomic) NSArray *dataArray;
+//@property (strong, nonatomic) NSArray *dataArray;
 @property (strong, nonatomic) NSMutableArray *buttonArray;
 @property (assign, nonatomic, getter = isEdit) BOOL edit;
 @property (assign, nonatomic, getter=isDragable) BOOL dragable;

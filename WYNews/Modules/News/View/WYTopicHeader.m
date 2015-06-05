@@ -5,14 +5,12 @@
 //  Created by dai.fengyi on 15/6/4.
 //  Copyright (c) 2015年 childrenOurFuture. All rights reserved.
 //
-
+//所有topick数据归于buttonChooseVC的两个数组
 #import "WYTopicHeader.h"
-#import "WYButtonChooseViewController.h"
+#import "WYTopic.h"
+#import "WYNetwork.h"
 #define kButtonW         40
 @implementation WYTopicHeader
-{
-    WYButtonChooseViewController *_buttonChooseVC;
-}
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -51,18 +49,41 @@
 
 - (void)loadData
 {
-    //数组赋值
-    _buttonChooseVC.selectedArray = [NSMutableArray arrayWithArray:_topicScrollView.topicArray];
+    //网络获取topicList
+    [[WYNetwork sharedWYNetwork] HttpGet:kWYNetworkTopicListURLStr parameter:nil success:^(id responseObject) {
+        NSLog(@"responseObject is %@", responseObject);
+        if (responseObject != nil) {
+            //根据hasIcon加到不同的数组
+            NSMutableArray *selectedMutArray = [NSMutableArray array];
+            NSMutableArray *unselectedMutArray = [NSMutableArray array];
+            NSArray *array = [responseObject objectForKey:@"tList"];
+            for (NSDictionary *dic in array) {
+                WYTopic *topic = [[WYTopic alloc] initWithDic:dic];
+                if (selectedMutArray.count < 24) {
+                    [selectedMutArray addObject:topic];
+                }else {
+                    [unselectedMutArray addObject:topic];
+                }
+            }
+            _buttonChooseVC.selectedArray = selectedMutArray;
+            _buttonChooseVC.unSelectedArray = unselectedMutArray;
+            _topicScrollView.topicArray = _buttonChooseVC.selectedArray;
+            [self.delegate topicArrayDidChanged:_buttonChooseVC.selectedArray];
+        }
+    } failure:^(NSError *error) {
+        
+    }];
+    //相关赋值
 }
 - (void)spreadChooseView:(UIButton *)sender
 {
-    //数组赋值
-    if (_buttonChooseVC.selectedArray == nil) {
-        _buttonChooseVC.selectedArray = [NSMutableArray arrayWithArray:_topicScrollView.topicArray];
-    }
-    if (_buttonChooseVC.unSelectedArray == nil) {
-        _buttonChooseVC.unSelectedArray = [NSMutableArray arrayWithArray:_topicScrollView.topicArray];
-    }
+//    //数组赋值
+//    if (_buttonChooseVC.selectedArray == nil) {
+//        _buttonChooseVC.selectedArray = [NSMutableArray arrayWithArray:_topicScrollView.topicArray];
+//    }
+//    if (_buttonChooseVC.unSelectedArray == nil) {
+//        _buttonChooseVC.unSelectedArray = [NSMutableArray arrayWithArray:_topicScrollView.topicArray];
+//    }
     
     //showInView
     [_buttonChooseVC showInView:sender.superview.superview];

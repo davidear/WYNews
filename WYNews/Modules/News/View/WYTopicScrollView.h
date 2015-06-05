@@ -9,6 +9,6 @@
 #import "WYBaseScrollView.h"
 
 @interface WYTopicScrollView : WYBaseScrollView
-@property (strong, nonatomic) NSArray *topicArray;
+@property (weak, nonatomic) NSArray *topicArray;
 @property (assign, nonatomic) CGFloat offsetX;  //两个scrollView靠offsetX联系起来
 @end

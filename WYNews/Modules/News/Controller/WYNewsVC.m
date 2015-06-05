@@ -14,7 +14,7 @@
 #import "WYNewsTableController.h"
 
 #import "WYTopic.h"
-@interface WYNewsVC () <UIScrollViewDelegate>
+@interface WYNewsVC () <UIScrollViewDelegate,TopicHeaderDelegate>
 
 @end
 
@@ -60,36 +60,13 @@
     
     _header = [[WYTopicHeader alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kTopicHeaderHeight)];
     //    _header.backgroundColor = [UIColor blueColor];
+    _header.delegate = self;
     _topicScrollView = _header.topicScrollView;
     [self.view addSubview:_header];
 }
 - (void)loadData
 {
-//    _topicScrollView.topicArray =
-    [[WYNetwork sharedWYNetwork] HttpGet:kWYNetworkTopicListURLStr parameter:nil success:^(id responseObject) {
-        NSLog(@"responseObject is %@", responseObject);
-        if (responseObject != nil) {
-            NSMutableArray *mutArray = [NSMutableArray array];
-            NSArray *array = [responseObject objectForKey:@"tList"];
-            for (NSDictionary *dic in array) {
-                WYTopic *topic = [[WYTopic alloc] initWithDic:dic];
-                [mutArray addObject:topic];
-            }
-            _topicScrollView.topicArray = [NSArray arrayWithArray:mutArray];
-            
-            [self addChildVCs];
-            _topicScrollView.offsetX = 0;
-        }
-//        for (WYNewsTableController *newsTC in self.childViewControllers) {
-//            newsTC.url = [dic objectForKey:@"urlString"];
-//        }
-        
-    } failure:^(NSError *error) {
-        
-    }];
-    
-//    _topicScrollView.topicArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"NewsURLs" ofType:@"plist"]];
-    
+
 }
 - (void)addChildVCs
 {
@@ -134,5 +111,10 @@
         _topicScrollView.offsetX = scrollView.contentOffset.x / scrollView.bounds.size.width;
     }
     
+}
+#pragma mark - TopicHeaderDelegate
+- (void)topicArrayDidChanged:(NSArray *)selectedArray
+{
+    [self addChildVCs];
 }
 @end

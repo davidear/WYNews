@@ -35,7 +35,6 @@
     if (_selectedArray != nil) {
         for (WYTopic *topic in _selectedArray) {
             [_topChooseView addButtonWith:topic.tname position:CGPointZero];
-            [_bottomChooseView addButtonWith:topic.tname position:CGPointZero];
         }
     }
     [self refreshView];
@@ -46,7 +45,6 @@
     _unSelectedArray = unSelectedArray;
     if (_unSelectedArray != nil) {
         for (WYTopic *topic in _unSelectedArray) {
-            [_topChooseView addButtonWith:topic.tname position:CGPointZero];
             [_bottomChooseView addButtonWith:topic.tname position:CGPointZero];
         }
     }
@@ -57,10 +55,11 @@
 {
     [view addSubview:self.view];
     CGRect frame = view.bounds;
+//    frame.size.height = frame.size.height - 44;//调整44高度,dock
     frame.origin.y = -frame.size.height;
     self.view.frame = frame;
     [UIView animateWithDuration:kDuration animations:^{
-        self.view.frame = view.bounds;
+        self.view.frame = CGRectMake(0, 0, frame.size.width, frame.size.height);
     } completion:^(BOOL finished) {
         
     }];
@@ -132,15 +131,17 @@
     _bottomChooseView.dragable = NO;
     [self.view addSubview:_bottomChooseView];
     
-    _topChooseView.clipsToBounds = NO;
-    _bottomChooseView.clipsToBounds = NO;
+//    _topChooseView.clipsToBounds = NO;
+//    _bottomChooseView.clipsToBounds = NO;
 }
 
+//在这里调整各个子view的尺寸，buttonChooseView的尺寸有其contentsize传出
 - (void)refreshView
 {
     [UIView animateWithDuration:kDuration animations:^{
-        _label.frame = CGRectMake(0, CGRectGetMaxY(_topChooseView.frame) + kMarginH, [UIScreen mainScreen].bounds.size.width, 30);
-        _bottomChooseView.frame = CGRectMake(0, CGRectGetMaxY(_label.frame) + kMarginH, [UIScreen mainScreen].bounds.size.width, 200);
+        _topChooseView.frame = CGRectMake(0, CGRectGetMaxY(_header.frame), _topChooseView.contentSize.width, _topChooseView.contentSize.height);
+        _label.frame = CGRectMake(0, CGRectGetMaxY(_topChooseView.frame) + kMarginH, self.view.frame.size.width, 30);
+        _bottomChooseView.frame = CGRectMake(0, CGRectGetMaxY(_label.frame) + kMarginH, self.view.frame.size.width, self.view.frame.size.height - CGRectGetMaxY(_label.frame));
     }];
 }
 #pragma mark - button Action

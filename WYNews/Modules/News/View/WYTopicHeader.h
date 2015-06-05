@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WYButtonChooseViewController.h"
 #import "WYTopicScrollView.h"
-
+@protocol TopicHeaderDelegate <NSObject>
+- (void)topicArrayDidChanged:(NSArray *)selectedArray;
+@end
 @interface WYTopicHeader : UIView
+@property (weak, nonatomic) id<TopicHeaderDelegate> delegate;
+@property (strong, nonatomic) WYButtonChooseViewController *buttonChooseVC;
 @property (strong, nonatomic) WYTopicScrollView *topicScrollView;
 @end

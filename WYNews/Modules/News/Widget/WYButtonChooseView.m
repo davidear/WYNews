@@ -79,8 +79,15 @@
             //根据最后一个button设置本self的frame和contentsize
             if (i == self.buttonArray.count - 1) {
                 CGSize size = CGSizeMake([UIScreen mainScreen].bounds.size.width, CGRectGetMaxY(button.frame) + kMarginH);
-                self.frame = (CGRect){self.frame.origin, size};
-                self.contentSize = self.frame.size;
+//                if (size.height > [UIScreen mainScreen].bounds.size.height * 0.6) {
+//                    size.height = [UIScreen mainScreen].bounds.size.height * 0.4;
+//                }
+                
+                //尺寸调整放到外面
+//                self.frame = (CGRect){self.frame.origin, size};
+//                self.contentSize = self.frame.size;
+                
+                self.contentSize = size;
             }
         }
         if (self.buttonArray.count == 0) {
