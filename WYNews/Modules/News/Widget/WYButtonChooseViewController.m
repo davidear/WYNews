@@ -63,6 +63,9 @@
     } completion:^(BOOL finished) {
         
     }];
+    
+    //在加入到view中才知道view.frame,之前在refreshView中的self.view.frame是满屏尺寸
+    [self refreshView];
 }
 
 //- (void)viewDidLoad {
@@ -122,8 +125,8 @@
     
     
     _label = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_topChooseView.frame) + 100, [UIScreen mainScreen].bounds.size.width, 30)];
-    _label.backgroundColor = [UIColor grayColor];
-    _label.text = @"separator label";
+    _label.backgroundColor = [UIColor lightGrayColor];
+    _label.text = @" 点击添加更多栏目";
     [self.view addSubview:_label];
 
     _bottomChooseView = [[WYButtonChooseView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_label.frame) + kMarginH, [UIScreen mainScreen].bounds.size.width, 200)];
