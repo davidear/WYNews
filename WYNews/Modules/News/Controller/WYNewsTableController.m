@@ -37,10 +37,11 @@ static NSString *reuseIdentifier = @"NewsIdentity";
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)setUrl:(NSString *)url
+- (void)setTid:(NSString *)tid
 {
-    _url = url;
-    [[WYNetwork sharedWYNetwork] HttpGetNews:_url success:^(id responseObject) {
+    _tid = tid;
+    NSString *url = [NSString stringWithFormat:@"/nc/article/list/%@/0-20.html", tid];
+    [[WYNetwork sharedWYNetwork] HttpGetNews:url success:^(id responseObject) {
         NSLog(@"abc");
         if (![responseObject isKindOfClass:[NSDictionary class]]) {
             return;

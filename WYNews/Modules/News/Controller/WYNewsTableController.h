@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface WYNewsTableController : UITableViewController
-@property (copy, nonatomic) NSString *url;
+@property (copy, nonatomic) NSString *tid;
 @end

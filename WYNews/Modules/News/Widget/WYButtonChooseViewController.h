@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@protocol WYTopicSelectionDelegate <NSObject>
+- (void)topicArrayDidChange:(NSArray *)topicArray;
+@end
 @interface WYButtonChooseViewController : UIViewController
+@property (weak, nonatomic) id<WYTopicSelectionDelegate> topicDelegate;
 @property (strong, nonatomic) NSMutableArray *selectedArray;//装字典
 @property (strong, nonatomic) NSMutableArray *unSelectedArray;//装字典
 

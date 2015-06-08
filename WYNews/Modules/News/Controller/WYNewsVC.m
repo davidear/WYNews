@@ -68,25 +68,58 @@
 {
 
 }
-- (void)addChildVCs
+//- (void)addChildVCs
+//{
+//    for (WYTopic *topic in _topicScrollView.topicArray) {
+//        WYNewsTableController *NewsTC = [[WYNewsTableController alloc] initWithStyle:UITableViewStylePlain];
+//        NewsTC.url = [NSString stringWithFormat:@"/nc/article/list/%@/0-20.html",topic.tid];
+////         "tid":"T1370583240249"
+////        /nc/article/list/T1348649654285/0-20.html
+//        [self addChildViewController:NewsTC];
+//    }
+//    
+//    for (int i = 0; i < self.childViewControllers.count; i++) {
+////        CGSize size = CGSizeMake(kScreenWidth, _newsScrollView.bounds.size.height);
+//        WYNewsTableController *newsTC = self.childViewControllers[i];
+//        newsTC.tableView.frame = (CGRect){CGPointMake(kScreenWidth * i, 0), _newsScrollView.bounds.size};
+//        [_newsScrollView addSubview:newsTC.tableView];
+//    }
+//    _newsScrollView.contentSize = CGSizeMake(kScreenWidth * _topicScrollView.topicArray.count, 0);
+//}
+
+- (void)refreshChildVCs
 {
+    //1. 筛选self.childViewControllers
+    NSMutableArray *mutArray = [NSMutableArray array];
     for (WYTopic *topic in _topicScrollView.topicArray) {
-        WYNewsTableController *NewsTC = [[WYNewsTableController alloc] initWithStyle:UITableViewStylePlain];
-        NewsTC.url = [NSString stringWithFormat:@"/nc/article/list/%@/0-20.html",topic.tid];
-//         "tid":"T1370583240249"
-//        /nc/article/list/T1348649654285/0-20.html
-        [self addChildViewController:NewsTC];
+        [self.childViewControllers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            WYNewsTableController *newsTC = obj;
+            if ([newsTC.tid isEqualToString:topic.tid]) {
+                [mutArray addObject:newsTC];
+                *stop = YES;
+            }
+        }];
+        WYNewsTableController *newsTC = [[WYNewsTableController alloc] initWithStyle:UITableViewStylePlain];
+        newsTC.tid = topic.tid;
+        [mutArray addObject:newsTC];
     }
     
+    //2. 将self.childViewControllers清空，并重新附上新数组
+    [self.childViewControllers makeObjectsPerformSelector:@selector(removeFromParentViewController)];
+    for (WYNewsTableController *newsTC in mutArray) {
+        [self addChildViewController:newsTC];
+    }
+    
+    //3. 刷新数组中VC对应的tableView的frame，加入到_newsScrollView
     for (int i = 0; i < self.childViewControllers.count; i++) {
-//        CGSize size = CGSizeMake(kScreenWidth, _newsScrollView.bounds.size.height);
+        //        CGSize size = CGSizeMake(kScreenWidth, _newsScrollView.bounds.size.height);
         WYNewsTableController *newsTC = self.childViewControllers[i];
         newsTC.tableView.frame = (CGRect){CGPointMake(kScreenWidth * i, 0), _newsScrollView.bounds.size};
         [_newsScrollView addSubview:newsTC.tableView];
     }
     _newsScrollView.contentSize = CGSizeMake(kScreenWidth * _topicScrollView.topicArray.count, 0);
+    
 }
-
 #pragma mark - button action
 - (void)newsFor24Hours
 {
@@ -115,6 +148,6 @@
 #pragma mark - TopicHeaderDelegate
 - (void)topicArrayDidChanged:(NSArray *)selectedArray
 {
-    [self addChildVCs];
+    [self refreshChildVCs];
 }
 @end

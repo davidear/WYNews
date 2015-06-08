@@ -21,6 +21,7 @@
 
 - (void)setTopicArray:(NSArray *)topicArray
 {
+    [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     _topicArray = topicArray;
     for (int i = 0; i < _topicArray.count; i++) {
         WYTopic *topic = _topicArray[i];

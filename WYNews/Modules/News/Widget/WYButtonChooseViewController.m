@@ -138,6 +138,27 @@
 //    _bottomChooseView.clipsToBounds = NO;
 }
 
+- (void)refreshData
+{
+    NSMutableArray *mutArray = [NSMutableArray array];
+    for (UIButton *button in _topChooseView.buttonArray) {
+        [_selectedArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            WYTopic *topic = obj;
+            if ([topic.tname isEqualToString:button.titleLabel.text]) {
+                [mutArray addObject:topic];
+                *stop = YES;
+            }
+        }];
+        [_unSelectedArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            WYTopic *topic = obj;
+            if ([topic.tname isEqualToString:button.titleLabel.text]) {
+                [mutArray addObject:topic];
+                *stop = YES;
+            }
+        }];
+    }
+    _selectedArray = mutArray;
+}
 //在这里调整各个子view的尺寸，buttonChooseView的尺寸有其contentsize传出
 - (void)refreshView
 {
@@ -166,11 +187,13 @@
 }
 - (void)spreadAction:(UIButton *)sender
 {
+    [self refreshData];
     [UIView animateWithDuration:kDuration animations:^{
         CGRect frame = self.view.frame;
         frame.origin.y = -frame.size.height;
         self.view.frame = frame;
     } completion:^(BOOL finished) {
+        [self.topicDelegate topicArrayDidChange:_selectedArray];
         [self.view removeFromSuperview];
     }];
 }

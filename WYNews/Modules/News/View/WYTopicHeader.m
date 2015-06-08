@@ -45,6 +45,7 @@
     [self addSubview:spreadButton];
     
     _buttonChooseVC = [[WYButtonChooseViewController alloc] init];
+    _buttonChooseVC.topicDelegate = self;
 }
 
 - (void)loadData
@@ -95,5 +96,10 @@
     // Drawing code
 }
 */
-
+#pragma mark - WYTopicSelectionDelegate
+- (void)topicArrayDidChange:(NSArray *)topicArray
+{
+    _topicScrollView.topicArray = _buttonChooseVC.selectedArray;
+    [self.delegate topicArrayDidChanged:_buttonChooseVC.selectedArray];
+}
 @end
