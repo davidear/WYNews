@@ -47,6 +47,9 @@
         if ([dic objectForKey:@"imgextra"]) {
             _imgextra = dic[@"imgextra"];
         }
+        if ([dic objectForKey:@"imgType"]) {
+            _imgType = [dic[@"imgType"] integerValue];
+        }
     }
     return self;
 }

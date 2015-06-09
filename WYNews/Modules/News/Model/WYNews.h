@@ -42,6 +42,7 @@
 @property (readonly, nonatomic) NSString *url_3w;
 @property (readonly, nonatomic) int votecount;
 //in addition
-@property (readonly, nonatomic) NSArray *imgextra;
+@property (readonly, nonatomic) NSArray *imgextra;//有，表示3图，该数组有后两图，第一图在imagesrc
+@property (readonly, nonatomic) NSInteger imgType;//值为1, 表示1张cell宽大图
 - (id)initWithDic:(NSDictionary *)dic;
 @end

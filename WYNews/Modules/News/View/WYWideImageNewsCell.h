@@ -1,5 +1,5 @@
 //
-//  WYImageNewsCell.h
+//  WYWideImageNewsCell.h
 //  WYNews
 //
 //  Created by dai.fengyi on 15/6/9.
@@ -8,6 +8,6 @@
 
 #import "WYBaseNewsCell.h"
 
-@interface WYImageNewsCell : WYBaseNewsCell
+@interface WYWideImageNewsCell : WYBaseNewsCell
 
 @end

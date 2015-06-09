@@ -16,7 +16,7 @@
 @end
 //typedef enum {
 //    DefaultNews,
-//    ImageNews,
+//    ImagesNews,
 //    Advertisement,
 //} NewsStyle;
 @implementation WYNewsTableController
@@ -25,11 +25,11 @@
 }
 /*
  DefaultNews,
- imageNews,
+ ImagesNews,
  Advertisement,
  */
 //static NSString *reuseDefaultNewsIdentifier = @"DefaultNews";
-//static NSString *reuseimageNewsIdentifier = @"ImageNews";
+//static NSString *reuseImagesNewsIdentifier = @"ImagesNews";
 //static NSString *reuseAdvertisementIdentifier = @"Advertisement";
 - (instancetype)initWithStyle:(UITableViewStyle)style
 {
@@ -102,7 +102,7 @@
     NSString *reuseIdentifier;
     WYNews *news = (WYNews *)_dataArray[indexPath.row];
     if (news.imgextra) {
-        reuseIdentifier = @"ImageNews";
+        reuseIdentifier = @"ImageImagesNewsNews";
     }else {
         reuseIdentifier = @"DefaultNews";
     }

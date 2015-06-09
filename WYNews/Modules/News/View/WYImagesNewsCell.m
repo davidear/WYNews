@@ -6,19 +6,19 @@
 //  Copyright (c) 2015年 childrenOurFuture. All rights reserved.
 //
 
-#import "WYImageNewsCell.h"
-@interface WYImageNewsCell()
+#import "WYImagesNewsCell.h"
+@interface WYImagesNewsCell()
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UIImageView *singleImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *secondImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *thirdImageView;
 @property (weak, nonatomic) IBOutlet UILabel *votecount;
 @end
-@implementation WYImageNewsCell
+@implementation WYImagesNewsCell
 + (id)cell
 {
     
-    return [[[NSBundle mainBundle] loadNibNamed:@"ImageNews" owner:nil options:nil] lastObject];
+    return [[[NSBundle mainBundle] loadNibNamed:@"ImagesNews" owner:nil options:nil] lastObject];
 }
 
 - (void)setNews:(WYNews *)news
