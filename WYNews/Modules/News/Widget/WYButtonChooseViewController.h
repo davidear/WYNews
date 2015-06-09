@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @protocol WYTopicSelectionDelegate <NSObject>
+- (void)chooseViewDidSelected:(NSString *)tname;
 - (void)topicArrayDidChange:(NSArray *)topicArray;
 @end
 @interface WYButtonChooseViewController : UIViewController

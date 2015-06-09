@@ -89,17 +89,20 @@
     //showInView
     [_buttonChooseVC showInView:sender.superview.superview];
 }
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 #pragma mark - WYTopicSelectionDelegate
 - (void)topicArrayDidChange:(NSArray *)topicArray
 {
     _topicScrollView.topicArray = _buttonChooseVC.selectedArray;
     [self.delegate topicArrayDidChanged:_buttonChooseVC.selectedArray];
 }
+
+//- (void)chooseViewDidSelected:(NSString *)tname
+//{
+//    for (int i = 0; i < _topicScrollView.topicArray.count; i++) {
+//        WYTopic *topic = _topicScrollView.topicArray[i];
+//        if ([tname isEqualToString:topic.tname]) {
+//            _topicScrollView.offsetX = i;
+//        }
+//    }
+//}
 @end

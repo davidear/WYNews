@@ -187,24 +187,33 @@
 }
 - (void)spreadAction:(UIButton *)sender
 {
+    //1. 更新UI上作所改动至数组
     [self refreshData];
     [UIView animateWithDuration:kDuration animations:^{
         CGRect frame = self.view.frame;
         frame.origin.y = -frame.size.height;
         self.view.frame = frame;
     } completion:^(BOOL finished) {
-        [self.topicDelegate topicArrayDidChange:_selectedArray];
         [self.view removeFromSuperview];
     }];
+    //2. 通知topicDelegate数据改动
+    [self.topicDelegate topicArrayDidChange:_selectedArray];
 }
+
+
 #pragma mark - ChooseButtonView delegate
 - (void)didSelectedButton:(WYLabelButton *)button
 {
     if (button.superview == _topChooseView) {
         //收起并跳转到该栏目新闻
-        if (button.isEdit) {
+        if (button.isEdit) {//编辑状态
             [_bottomChooseView addButtonWith:button.titleLabel.text position:[_bottomChooseView convertPoint:button.frame.origin fromView:_topChooseView]];
             [_topChooseView removeButton:button];
+        } else {//非编辑状态
+            //1. 收view
+            [self spreadAction:nil];
+            //2. 通知topicDelegate所选
+            [self.topicDelegate chooseViewDidSelected:button.titleLabel.text];
         }
     }else {
         [_topChooseView addButtonWith:button.titleLabel.text position:[_topChooseView convertPoint:button.frame.origin fromView:_bottomChooseView]];
