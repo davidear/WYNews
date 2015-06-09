@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0630"
+   LastUpgradeVersion = "0510"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A135BE66B7F70DE15D19D2B0"
-               BuildableName = "libPods-WYNewsTests-AFNetworking.a"
-               BlueprintName = "Pods-WYNewsTests-AFNetworking"
+               BlueprintIdentifier = "C8C7A35E54B2A562A4725BFC"
+               BuildableName = "libPods-WYNews-SDWebImage.a"
+               BlueprintName = "Pods-WYNews-SDWebImage"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A135BE66B7F70DE15D19D2B0"
-            BuildableName = "libPods-WYNewsTests-AFNetworking.a"
-            BlueprintName = "Pods-WYNewsTests-AFNetworking"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A135BE66B7F70DE15D19D2B0"
-            BuildableName = "libPods-WYNewsTests-AFNetworking.a"
-            BlueprintName = "Pods-WYNewsTests-AFNetworking"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

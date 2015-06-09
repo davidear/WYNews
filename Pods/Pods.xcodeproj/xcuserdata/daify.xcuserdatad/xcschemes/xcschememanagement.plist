@@ -4,69 +4,43 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-WYNewsTests-AFNetworking.xcscheme</key>
+		<key>Pods-WYNews-AFNetworking.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
-		<key>Pods-WYNewsTests-Colours.xcscheme</key>
+		<key>Pods-WYNews-Colours.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
-		<key>Pods-WYNewsTests-MBProgressHUD.xcscheme</key>
+		<key>Pods-WYNews-MBProgressHUD.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
-		<key>Pods-WYNewsTests-MJRefresh.xcscheme</key>
+		<key>Pods-WYNews-MJExtension.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>5</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
-		<key>Pods-WYNewsTests-SDWebImage.xcscheme</key>
+		<key>Pods-WYNews-MJRefresh.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>6</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
-		<key>Pods-WYNewsTests.xcscheme</key>
+		<key>Pods-WYNews-SDWebImage.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-WYNews.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict>
-		<key>00730903C23C9CC4ED349B4E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4CDBFD0B504AF2BDC90C2F0F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>59E8EFE86AC71288713CC12D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9E872ECB81795F5C2C548B68</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A135BE66B7F70DE15D19D2B0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F432284475E0D304F56B68A6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-	</dict>
+	<dict/>
 </dict>
 </plist>
