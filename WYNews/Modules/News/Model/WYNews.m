@@ -43,6 +43,10 @@
         _url = dic[@"url"];
         _url_3w = dic[@"url_3w"];
         _votecount = [dic[@"votecount"] intValue];
+        
+        if ([dic objectForKey:@"imgextra"]) {
+            _imgextra = dic[@"imgextra"];
+        }
     }
     return self;
 }

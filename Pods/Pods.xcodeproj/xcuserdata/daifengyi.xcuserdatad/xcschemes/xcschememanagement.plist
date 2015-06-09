@@ -4,37 +4,37 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-WYNewsTests-AFNetworking.xcscheme</key>
+		<key>Pods-WYNews-AFNetworking.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-WYNewsTests-Colours.xcscheme</key>
+		<key>Pods-WYNews-Colours.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-WYNewsTests-MBProgressHUD.xcscheme</key>
+		<key>Pods-WYNews-MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-WYNewsTests-MJExtension.xcscheme</key>
+		<key>Pods-WYNews-MJExtension.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-WYNewsTests-MJRefresh.xcscheme</key>
+		<key>Pods-WYNews-MJRefresh.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-WYNewsTests-SDWebImage.xcscheme</key>
+		<key>Pods-WYNews-SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-WYNewsTests.xcscheme</key>
+		<key>Pods-WYNews.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -42,37 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0CFFB41CAACE8FBCBE8DD6AE</key>
+		<key>0F5097268712A6458E078653</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3527D3398013F0BA27081DBE</key>
+		<key>3D39EE2E7D5EE9938532FAB3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>603B17674042B1621539FFA1</key>
+		<key>8272F60035F95C954E4D4B93</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>896C01F23D19FA206CCB0482</key>
+		<key>CD2A00DF1F636CF9E4F043D1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9EFD233F94456A4ED1DE600A</key>
+		<key>D5DF9A7DA8942BF6485C3675</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A742490BCA9262462E2818AB</key>
+		<key>D6E440C1F604727619D91826</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C15F6B20DDD47DD0D4706D20</key>
+		<key>EF08CAFFACD355A02D7036B0</key>
 		<dict>
 			<key>primary</key>
 			<true/>

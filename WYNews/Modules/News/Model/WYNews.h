@@ -41,5 +41,7 @@
 @property (readonly, nonatomic) NSString *url;
 @property (readonly, nonatomic) NSString *url_3w;
 @property (readonly, nonatomic) int votecount;
+//in addition
+@property (readonly, nonatomic) NSArray *imgextra;
 - (id)initWithDic:(NSDictionary *)dic;
 @end

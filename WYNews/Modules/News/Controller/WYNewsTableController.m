@@ -10,15 +10,27 @@
 #import "MJRefresh.h"
 #import "WYNetwork.h"
 #import "WYNews.h"
+#import "WYDefaultNewsCell.h"
 @interface WYNewsTableController ()
 
 @end
-
+//typedef enum {
+//    DefaultNews,
+//    ImageNews,
+//    Advertisement,
+//} NewsStyle;
 @implementation WYNewsTableController
 {
     NSMutableArray *_dataArray;
 }
-static NSString *reuseIdentifier = @"NewsIdentity";
+/*
+ DefaultNews,
+ imageNews,
+ Advertisement,
+ */
+//static NSString *reuseDefaultNewsIdentifier = @"DefaultNews";
+//static NSString *reuseimageNewsIdentifier = @"ImageNews";
+//static NSString *reuseAdvertisementIdentifier = @"Advertisement";
 - (instancetype)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -35,6 +47,10 @@ static NSString *reuseIdentifier = @"NewsIdentity";
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+//    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//
+//    self.tableView.preservesSuperviewLayoutMargins = NO;
+//    self.tableView.separatorInset = UIEdgeInsetsZero;
 }
 
 - (void)setTid:(NSString *)tid
@@ -61,29 +77,63 @@ static NSString *reuseIdentifier = @"NewsIdentity";
     }];
 }
 #pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    WYNews *news = _dataArray[indexPath.row];
+    if (news.imgextra) {
+        return 118;
+    }
+    return 80;
+}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     // Return the number of sections.
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     // Return the number of rows in the section.
     return _dataArray ?  _dataArray.count : 0;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *reuseIdentifier;
+    WYNews *news = (WYNews *)_dataArray[indexPath.row];
+    if (news.imgextra) {
+        reuseIdentifier = @"ImageNews";
+    }else {
+        reuseIdentifier = @"DefaultNews";
+    }
+//    NSClassFromString([NSString stringWithFormat:@"WY%@Cell", reuseIdentifier]);
+    WYBaseNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
+        cell = [NSClassFromString([NSString stringWithFormat:@"WY%@Cell", reuseIdentifier]) cell];
     }
     // Configure the cell...
-    WYNews *news = (WYNews *)_dataArray[indexPath.row];
-    cell.textLabel.text = news.title;
+    cell.news = news;
+//    cell.textLabel.text = news.title;
     return cell;
 }
 
-
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Remove seperator inset
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+        [cell setSeparatorInset:UIEdgeInsetsZero];
+    }
+    
+    // Prevent the cell from inheriting the Table View's margin settings
+    if ([cell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]) {
+        [cell setPreservesSuperviewLayoutMargins:NO];
+    }
+    
+    // Explictly set your cell's layout margins
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
