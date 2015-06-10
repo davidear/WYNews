@@ -8,6 +8,7 @@ target 'WYNews' do
     pod 'MJRefresh'
     pod 'MBProgressHUD'
     pod 'MJExtension'
+    pod 'MJRefresh', '~> 1.4.7'
 end
 
 target 'WYNewsTests' do

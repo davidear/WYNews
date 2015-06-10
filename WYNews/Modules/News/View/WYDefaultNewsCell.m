@@ -33,19 +33,7 @@
  */
 + (id)cell
 {
-    
     return [[[NSBundle mainBundle] loadNibNamed:@"DefaultNews" owner:nil options:nil] lastObject];
-//    
-//    switch (newsStyle) {
-//        case DefaultNews:
-//            return [[[NSBundle mainBundle] loadNibNamed:@"DefaultNews" owner:nil options:nil] firstObject];
-//        case ImageNews:
-//            return [[NSBundle mainBundle] loadNibNamed:@"ImageNews" owner:nil options:nil];
-//        case Advertisement:
-//            return [[NSBundle mainBundle] loadNibNamed:@"Advertisement" owner:nil options:nil];
-//        default:
-//            return nil;
-//    }
 }
 
 - (void)setNews:(WYNews *)news

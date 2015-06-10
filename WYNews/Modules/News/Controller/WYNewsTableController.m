@@ -11,6 +11,8 @@
 #import "WYNetwork.h"
 #import "WYNews.h"
 #import "WYDefaultNewsCell.h"
+#import "WYImagesNewsCell.h"
+#import "WYWideImageNewsCell.h"
 @interface WYNewsTableController ()
 
 @end
@@ -82,6 +84,8 @@
     WYNews *news = _dataArray[indexPath.row];
     if (news.imgextra) {
         return 118;
+    }else if (news.imgType) {
+        return 178;
     }
     return 80;
 }
@@ -102,7 +106,9 @@
     NSString *reuseIdentifier;
     WYNews *news = (WYNews *)_dataArray[indexPath.row];
     if (news.imgextra) {
-        reuseIdentifier = @"ImageImagesNewsNews";
+        reuseIdentifier = @"ImagesNews";
+    }else if (news.imgType) {
+        reuseIdentifier = @"WideImageNews";
     }else {
         reuseIdentifier = @"DefaultNews";
     }

@@ -7,8 +7,28 @@
 //
 
 #import "WYWideImageNewsCell.h"
-
+@interface WYWideImageNewsCell()
+@property (weak, nonatomic) IBOutlet UILabel *title;
+@property (weak, nonatomic) IBOutlet UIImageView *singleImageView;
+@property (weak, nonatomic) IBOutlet UILabel *digest;
+@property (weak, nonatomic) IBOutlet UILabel *votecount;
+@end
 @implementation WYWideImageNewsCell
++ (id)cell
+{
+    return [[[NSBundle mainBundle] loadNibNamed:@"WideImageNews" owner:nil options:nil] lastObject];
+}
+
+- (void)setNews:(WYNews *)news
+{
+    [super setNews:news];
+    [_singleImageView sd_setImageWithURL:[NSURL URLWithString:self.news.imgsrc] placeholderImage:[UIImage imageNamed:@""] options:SDWebImageLowPriority | SDWebImageRetryFailed completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        
+    }];
+    _title.text = self.news.title;
+    _digest.text = self.news.digest;
+    _votecount.text = [NSString stringWithFormat:@"%d跟帖", self.news.votecount];
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.
