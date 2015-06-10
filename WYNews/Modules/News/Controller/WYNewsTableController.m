@@ -53,6 +53,10 @@
 //
 //    self.tableView.preservesSuperviewLayoutMargins = NO;
 //    self.tableView.separatorInset = UIEdgeInsetsZero;
+    
+    [self.tableView addLegendHeaderWithRefreshingBlock:^{
+        
+    } dateKey:nil];
 }
 
 - (void)setTid:(NSString *)tid
