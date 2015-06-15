@@ -1,6 +1,6 @@
 //
 //  WYTool.h
-//  BeaconMall
+//  WYNews
 //
 //  Created by dai.fengyi on 4/28/15.
 //  Copyright (c) 2015 childrenOurFuture. All rights reserved.
