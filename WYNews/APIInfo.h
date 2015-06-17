@@ -1,5 +1,17 @@
- get
+获取新闻topic列表
 http://c.m.163.com/nc/topicset/ios/subscribe/manage/listspecial.html
+
+获取新闻列表
+http://c.m.163.com/nc/article/list/T1370583240249/0-20.html
+T1370583240249为topic中的tid
+0-20：
+0表示开始的新闻序号
+20表示一次拉取的新闻条数
+0-20表示拉取最新的20条新闻，40-20表示从第41条开始拉取20条
+网易这里下拉刷新即每次刷0-20
+上啦加载更多是每次多加载20条
+
+
 
 {"tList":[
     {

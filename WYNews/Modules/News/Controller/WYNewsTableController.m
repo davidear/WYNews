@@ -13,7 +13,7 @@
 #import "WYDefaultNewsCell.h"
 #import "WYImagesNewsCell.h"
 #import "WYWideImageNewsCell.h"
-@interface WYNewsTableController ()
+@interface WYNewsTableController ()<UIScrollViewDelegate>
 
 @end
 //typedef enum {
@@ -24,6 +24,9 @@
 @implementation WYNewsTableController
 {
     NSMutableArray *_dataArray;
+    NSInteger _page;
+    MJRefreshHeader *_header;
+    MJRefreshFooter *_footer;
 }
 /*
  DefaultNews,
@@ -53,35 +56,99 @@
 //
 //    self.tableView.preservesSuperviewLayoutMargins = NO;
 //    self.tableView.separatorInset = UIEdgeInsetsZero;
-    
-    [self.tableView addLegendHeaderWithRefreshingBlock:^{
-        
-    } dateKey:nil];
+    self.tableView.delegate = self;
+    _header = [self.tableView addLegendHeaderWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    _footer = [self.tableView addLegendFooterWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self loadNewData];
 }
 
 - (void)setTid:(NSString *)tid
 {
     _tid = tid;
-    NSString *url = [NSString stringWithFormat:@"/nc/article/list/%@/0-20.html", tid];
-    [[WYNetwork sharedWYNetwork] HttpGetNews:url success:^(id responseObject) {
-        NSLog(@"abc");
-        if (![responseObject isKindOfClass:[NSDictionary class]]) {
-            return;
-        }
-        if (![[responseObject allObjects] isKindOfClass:[NSArray class]]) {
-            return;
-        }
-//            NSMutableArray *mutArr = [NSMutableArray array];
+}
+#pragma mark - Refresh
+- (void)loadMoreData
+{
+//    if (_footer.state == MJRefreshFooterStateIdle) {
+        NSLog(@"loadmoreData");
+        NSMutableString *url = [NSMutableString stringWithString:kWYNetWorkNewsListBaseStr];
+        [url appendFormat:@"/%@/%ld-%d.html", _tid, kWYNetWorkNewsListFetchOnceCount * _page, kWYNetWorkNewsListFetchOnceCount];
+        [[WYNetwork sharedWYNetwork] HttpGetNews:url success:^(id responseObject) {
+            NSLog(@"abc");
+            if (![responseObject isKindOfClass:[NSDictionary class]]) {
+                return;
+            }
+            if (![[responseObject allObjects] isKindOfClass:[NSArray class]]) {
+                return;
+            }
             for (NSDictionary *dic in [[responseObject allObjects] lastObject]) {
                 WYNews *news = [[WYNews alloc] initWithDic:dic];
-//                [mutArr addObject:news];
                 [_dataArray addObject:news];
             }
+            _page++;
+            [_footer endRefreshing];
             [self.tableView reloadData];
-    } failure:^(NSError *error) {
-        NSLog(@"\nerror is %@", [error localizedDescription]);
-    }];
+        } failure:^(NSError *error) {
+            NSLog(@"\nerror is %@", [error localizedDescription]);
+            [_footer endRefreshing];
+        }];
+//    }else [_footer endRefreshing];
 }
+
+- (void)loadNewData
+{
+//    if (_header.state == MJRefreshHeaderStateIdle) {
+        NSMutableString *url = [NSMutableString stringWithString:kWYNetWorkNewsListBaseStr];
+        [url appendFormat:@"/%@/%d-%d.html", _tid, 0, kWYNetWorkNewsListFetchOnceCount];
+        [[WYNetwork sharedWYNetwork] HttpGetNews:url success:^(id responseObject) {
+            NSLog(@"abc");
+            if (![responseObject isKindOfClass:[NSDictionary class]]) {
+                return;
+            }
+            if (![[responseObject allObjects] isKindOfClass:[NSArray class]]) {
+                return;
+            }
+            [_dataArray removeAllObjects];
+            for (NSDictionary *dic in [[responseObject allObjects] lastObject]) {
+                WYNews *news = [[WYNews alloc] initWithDic:dic];
+                [_dataArray addObject:news];
+            }
+            _page = 1;
+            [_header endRefreshing];
+            [self.tableView reloadData];
+        } failure:^(NSError *error) {
+            NSLog(@"\nerror is %@", [error localizedDescription]);
+            [_header endRefreshing];
+        }];
+//    }else [_header endRefreshing];
+}
+
+#pragma mark - ScrollView Delegate
+//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+//{
+//    //在最低部时，contentOffset.y = contentSize.height - scrollView.bounds.size.height
+//    NSLog(@"did end dragging %f", scrollView.contentOffset.y);
+//    if (scrollView.contentOffset.y > scrollView.contentSize.height - scrollView.bounds.size.height - 250) {
+//        [self loadMoreData];
+//    }
+//}
+//- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+//{
+//    //在最低部时，contentOffset.y = contentSize.height - scrollView.bounds.size.height
+//    NSLog(@"did end dragging %f", scrollView.contentOffset.y);
+//    if (scrollView.contentOffset.y > scrollView.contentSize.height - scrollView.bounds.size.height - 250) {
+//        [self loadMoreData];
+//    }
+//}
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+//{
+//    NSLog(@"\ndid scroll contentoffset.y %f, contentsize.height %f", scrollView.contentOffset.y, scrollView.contentSize.height);
+//}
 #pragma mark - Table view data source
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -143,6 +210,11 @@
     if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
         [cell setLayoutMargins:UIEdgeInsetsZero];
     }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
 }
 /*
 // Override to support conditional editing of the table view.
