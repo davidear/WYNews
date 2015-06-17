@@ -220,6 +220,13 @@
 			path = Tool;
 			sourceTree = "<group>";
 		};
+		B2DD1CFB1B31AE8800AB7BE9 /* Catagory */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Catagory;
+			sourceTree = "<group>";
+		};
 		B2E5CE771B14728E0061EC8B = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +250,7 @@
 		B2E5CE821B14728E0061EC8B /* WYNews */ = {
 			isa = PBXGroup;
 			children = (
+				B2DD1CFB1B31AE8800AB7BE9 /* Catagory */,
 				B29013FF1B15C24500A9229F /* Tool */,
 				B29013F61B15A91300A9229F /* WYTemplate */,
 				B2E5CEB61B147AB60061EC8B /* Modules */,
