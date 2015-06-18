@@ -18,13 +18,7 @@
                             <constraint firstAttribute="height" constant="18" id="1vA-aa-zfe"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2014跟帖" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dd6-C7-jyy">
-                        <rect key="frame" x="293" y="155" width="44" height="12"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVq-Er-Xf5">
@@ -33,7 +27,7 @@
                             <constraint firstAttribute="height" constant="30" id="FAc-0X-Bb4"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                         <variation key="default">
                             <mask key="constraints">
@@ -55,24 +49,40 @@
                             </mask>
                         </variation>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMG-br-0Lr">
+                        <rect key="frame" x="285" y="152" width="52" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="206" id="PEQ-yq-iF2"/>
+                            <constraint firstAttribute="height" constant="15" id="mmI-mb-4Qq"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="2307跟帖">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="PEQ-yq-iF2"/>
+                            </mask>
+                        </variation>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="hVq-Er-Xf5" firstAttribute="top" secondItem="kI1-tO-nKp" secondAttribute="bottom" constant="5" id="0Hi-pU-3lo"/>
-                    <constraint firstAttribute="trailing" secondItem="Dd6-C7-jyy" secondAttribute="trailing" constant="10" id="4a6-lP-hD2"/>
                     <constraint firstAttribute="bottom" secondItem="hVq-Er-Xf5" secondAttribute="bottom" constant="10" id="AhY-6v-dCf"/>
                     <constraint firstAttribute="trailing" secondItem="f23-0Q-5OR" secondAttribute="trailing" constant="10" id="G3g-PW-JJQ"/>
+                    <constraint firstAttribute="bottom" secondItem="IMG-br-0Lr" secondAttribute="bottom" constant="10" id="Gy9-Oh-K0K"/>
                     <constraint firstAttribute="trailing" secondItem="kI1-tO-nKp" secondAttribute="trailing" constant="15" id="RN2-Kl-h7o"/>
                     <constraint firstItem="hVq-Er-Xf5" firstAttribute="top" secondItem="kI1-tO-nKp" secondAttribute="bottom" constant="5" id="SQf-mE-NEx"/>
                     <constraint firstAttribute="bottom" secondItem="hVq-Er-Xf5" secondAttribute="bottom" constant="10" id="SoP-w0-i8o"/>
-                    <constraint firstAttribute="bottom" secondItem="Dd6-C7-jyy" secondAttribute="bottom" constant="10" id="X1A-7s-GP2"/>
                     <constraint firstItem="f23-0Q-5OR" firstAttribute="top" secondItem="9Td-BR-6nF" secondAttribute="top" constant="10" id="Zcx-iw-ZE0"/>
                     <constraint firstItem="kI1-tO-nKp" firstAttribute="top" secondItem="f23-0Q-5OR" secondAttribute="bottom" constant="5" id="dMW-xi-ADz"/>
                     <constraint firstItem="hVq-Er-Xf5" firstAttribute="leading" secondItem="9Td-BR-6nF" secondAttribute="leading" constant="10" id="dYW-yS-GCC"/>
-                    <constraint firstItem="Dd6-C7-jyy" firstAttribute="top" secondItem="9Td-BR-6nF" secondAttribute="top" constant="10" id="e4o-Z4-Fhs"/>
                     <constraint firstAttribute="trailing" secondItem="hVq-Er-Xf5" secondAttribute="trailing" constant="10" id="fHe-Ow-anh"/>
                     <constraint firstItem="kI1-tO-nKp" firstAttribute="leading" secondItem="9Td-BR-6nF" secondAttribute="leading" constant="10" id="g0B-Kf-J9o"/>
                     <constraint firstItem="f23-0Q-5OR" firstAttribute="leading" secondItem="9Td-BR-6nF" secondAttribute="leading" constant="10" id="j4K-os-hjz"/>
                     <constraint firstAttribute="bottom" secondItem="kI1-tO-nKp" secondAttribute="bottom" constant="5" id="ojD-Zh-AVM"/>
+                    <constraint firstAttribute="trailing" secondItem="IMG-br-0Lr" secondAttribute="trailing" constant="10" id="uxW-0h-Lko"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
@@ -81,15 +91,14 @@
                         <exclude reference="AhY-6v-dCf"/>
                         <exclude reference="SQf-mE-NEx"/>
                         <exclude reference="SoP-w0-i8o"/>
-                        <exclude reference="e4o-Z4-Fhs"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
             <connections>
-                <outlet property="digest" destination="hVq-Er-Xf5" id="5cv-L8-IRa"/>
-                <outlet property="singleImageView" destination="kI1-tO-nKp" id="NvJ-Vp-pHf"/>
-                <outlet property="title" destination="f23-0Q-5OR" id="eUb-1s-GOl"/>
-                <outlet property="votecount" destination="Dd6-C7-jyy" id="VYy-yD-czb"/>
+                <outlet property="_digest" destination="hVq-Er-Xf5" id="ckI-7f-H2l"/>
+                <outlet property="_singleImageView" destination="kI1-tO-nKp" id="jYP-Qe-cpt"/>
+                <outlet property="_title" destination="f23-0Q-5OR" id="wli-n9-Tir"/>
+                <outlet property="_votecount" destination="IMG-br-0Lr" id="3Ug-Ro-4Ib"/>
             </connections>
             <point key="canvasLocation" x="241.5" y="307"/>
         </tableViewCell>

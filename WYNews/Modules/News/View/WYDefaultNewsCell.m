@@ -7,12 +7,11 @@
 //
 
 #import "WYDefaultNewsCell.h"
-
+#import "UIImage+WY.h"
 @interface WYDefaultNewsCell()
-@property (weak, nonatomic) IBOutlet UIImageView *singleImageView;
-@property (weak, nonatomic) IBOutlet UILabel *title;
-@property (weak, nonatomic) IBOutlet UILabel *digest;
-@property (weak, nonatomic) IBOutlet UILabel *votecount;
+{
+    __weak IBOutlet UILabel *_digest;
+}
 @end
 @implementation WYDefaultNewsCell
 /*
@@ -36,6 +35,7 @@
     return [[[NSBundle mainBundle] loadNibNamed:@"DefaultNews" owner:nil options:nil] lastObject];
 }
 
+
 - (void)setNews:(WYNews *)news
 {
     [super setNews:news];
@@ -43,6 +43,8 @@
     }];
     _title.text = self.news.title;
     _digest.text = self.news.digest;
-    _votecount.text = [NSString stringWithFormat:@"%d跟帖", self.news.votecount];
+    
+    [_votecount setTitle:[NSString stringWithFormat:@"%d跟帖", self.news.votecount] forState:UIControlStateDisabled];
+//    _votecount.bounds = [_votecount.titleLabel.text boundingRectWithSize:CGSizeMake(MAXFLOAT, _votecount.bounds.size.height) options:NSStringDrawingTruncatesLastVisibleLine attributes:@{NSFontAttributeName : _votecount.titleLabel.font} context:nil];
 }
 @end

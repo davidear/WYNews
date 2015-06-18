@@ -17,6 +17,14 @@
     // Initialization code
 }
 
+- (void)layoutSubviews
+{
+    //    UIImage *image = [UIImage imageResizedWithName:@"cola_bubble_gray"];
+    UIImage *image = [UIImage imageNamed:@"cola_bubble_red"];
+    image = [image resizableImageWithCapInsets:UIEdgeInsetsMake(0, 12, 0, 12) resizingMode:UIImageResizingModeTile];
+    [_votecount setBackgroundImage:image forState:UIControlStateDisabled];
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

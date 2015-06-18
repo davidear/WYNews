@@ -8,11 +8,10 @@
 
 #import "WYImagesNewsCell.h"
 @interface WYImagesNewsCell()
-@property (weak, nonatomic) IBOutlet UILabel *title;
-@property (weak, nonatomic) IBOutlet UIImageView *singleImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *secondImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *thirdImageView;
-@property (weak, nonatomic) IBOutlet UILabel *votecount;
+{
+    __weak IBOutlet UIImageView *_secondImageView;
+    __weak IBOutlet UIImageView *_thirdImageView;
+}
 @end
 @implementation WYImagesNewsCell
 + (id)cell
@@ -30,7 +29,7 @@
     [_secondImageView sd_setImageWithURL:[NSURL URLWithString:self.news.imgextra[0][@"imgsrc"]] placeholderImage:[UIImage imageNamed:@"contentview_image_default"] options:SDWebImageLowPriority | SDWebImageRetryFailed];
     [_thirdImageView sd_setImageWithURL:[NSURL URLWithString:self.news.imgextra[1][@"imgsrc"]] placeholderImage:[UIImage imageNamed:@"contentview_image_default"] options:SDWebImageLowPriority | SDWebImageRetryFailed];
     _title.text = self.news.title;
-    _votecount.text = [NSString stringWithFormat:@"%d跟帖", self.news.votecount];
+    [_votecount setTitle:[NSString stringWithFormat:@"%d跟帖", self.news.votecount] forState:UIControlStateDisabled];
 }
 /*
 // Only override drawRect: if you perform custom drawing.

@@ -25,19 +25,13 @@
                             </mask>
                         </variation>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2014跟帖" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4e-Kg-FNw">
-                        <rect key="frame" x="293" y="10" width="44" height="12"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oqs-uW-4k5">
                         <rect key="frame" x="10" y="10" width="38" height="18"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="k8N-lx-gCd"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wUe-mm-1tW">
@@ -66,18 +60,35 @@
                             </mask>
                         </variation>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BlM-b9-OS9">
+                        <rect key="frame" x="285" y="10" width="52" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="206" id="Oo0-Ok-dUk"/>
+                            <constraint firstAttribute="height" constant="15" id="UqS-t1-WJy"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="2307跟帖">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Oo0-Ok-dUk"/>
+                            </mask>
+                        </variation>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="2AX-qK-R15" firstAttribute="width" secondItem="wUe-mm-1tW" secondAttribute="width" id="0ks-pw-xbu"/>
                     <constraint firstAttribute="trailing" secondItem="wUe-mm-1tW" secondAttribute="trailing" constant="10" id="3SG-hW-v3U"/>
                     <constraint firstAttribute="trailing" secondItem="Oqs-uW-4k5" secondAttribute="trailing" constant="10" id="C1M-Yr-W22"/>
-                    <constraint firstItem="K4e-Kg-FNw" firstAttribute="top" secondItem="h3a-Kv-0LN" secondAttribute="top" constant="10" id="GkZ-pW-09k"/>
+                    <constraint firstItem="BlM-b9-OS9" firstAttribute="top" secondItem="h3a-Kv-0LN" secondAttribute="top" constant="10" id="GnQ-IU-PsL"/>
                     <constraint firstItem="Oqs-uW-4k5" firstAttribute="leading" secondItem="h3a-Kv-0LN" secondAttribute="leading" constant="10" id="RG0-tV-Mzz"/>
                     <constraint firstItem="2AX-qK-R15" firstAttribute="height" secondItem="wUe-mm-1tW" secondAttribute="height" id="Spo-uX-zse"/>
                     <constraint firstItem="wUe-mm-1tW" firstAttribute="leading" secondItem="2AX-qK-R15" secondAttribute="trailing" constant="5" id="UIP-rN-vou"/>
                     <constraint firstItem="2AX-qK-R15" firstAttribute="top" secondItem="mLL-Pn-mwp" secondAttribute="top" id="XtO-CB-arr"/>
+                    <constraint firstAttribute="trailing" secondItem="BlM-b9-OS9" secondAttribute="trailing" constant="10" id="aSs-F8-ueD"/>
                     <constraint firstItem="mLL-Pn-mwp" firstAttribute="top" secondItem="Oqs-uW-4k5" secondAttribute="bottom" constant="5" id="bDK-1d-yXj"/>
-                    <constraint firstAttribute="trailing" secondItem="K4e-Kg-FNw" secondAttribute="trailing" constant="10" id="bS4-3U-t60"/>
                     <constraint firstItem="2AX-qK-R15" firstAttribute="top" secondItem="wUe-mm-1tW" secondAttribute="top" id="cUw-NO-Nsx"/>
                     <constraint firstItem="2AX-qK-R15" firstAttribute="leading" secondItem="mLL-Pn-mwp" secondAttribute="trailing" constant="5" id="fON-bk-52r"/>
                     <constraint firstAttribute="bottom" secondItem="wUe-mm-1tW" secondAttribute="bottom" constant="10" id="iVF-ZH-mgW"/>
@@ -96,11 +107,11 @@
                 </variation>
             </tableViewCellContentView>
             <connections>
-                <outlet property="secondImageView" destination="2AX-qK-R15" id="i1N-BM-g8d"/>
-                <outlet property="singleImageView" destination="mLL-Pn-mwp" id="tJW-sh-xRo"/>
-                <outlet property="thirdImageView" destination="wUe-mm-1tW" id="39a-a7-wjn"/>
-                <outlet property="title" destination="Oqs-uW-4k5" id="hb9-Oz-oSX"/>
-                <outlet property="votecount" destination="K4e-Kg-FNw" id="Elo-pJ-oLN"/>
+                <outlet property="_secondImageView" destination="2AX-qK-R15" id="KCW-wa-dtm"/>
+                <outlet property="_singleImageView" destination="mLL-Pn-mwp" id="VDj-nw-JSJ"/>
+                <outlet property="_thirdImageView" destination="wUe-mm-1tW" id="9s8-PF-Fs8"/>
+                <outlet property="_title" destination="Oqs-uW-4k5" id="Nxi-gN-sG7"/>
+                <outlet property="_votecount" destination="BlM-b9-OS9" id="eE7-18-Uh5"/>
             </connections>
             <point key="canvasLocation" x="356.5" y="309"/>
         </tableViewCell>

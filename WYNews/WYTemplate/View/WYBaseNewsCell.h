@@ -10,6 +10,11 @@
 #import "UIImageView+WebCache.h"
 #import "WYNews.h"
 @interface WYBaseNewsCell : UITableViewCell
+{
+    __weak IBOutlet UILabel *_title;
+    __weak IBOutlet UIButton *_votecount;
+    __weak IBOutlet UIImageView *_singleImageView;
+}
 @property (strong, nonatomic) WYNews *news;
 + (id)cell;
 @end

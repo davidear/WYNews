@@ -15,6 +15,7 @@
 		B2073C6F1B26E7A3000AFB1E /* WYImagesNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2073C6E1B26E7A3000AFB1E /* WYImagesNewsCell.m */; };
 		B2073C721B2723CC000AFB1E /* WYWideImageNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2073C711B2723CC000AFB1E /* WYWideImageNewsCell.m */; };
 		B2073C741B2723FC000AFB1E /* WideImageNews.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2073C731B2723FC000AFB1E /* WideImageNews.xib */; };
+		B21E759E1B325DEE00591D4B /* UIImage+WY.m in Sources */ = {isa = PBXBuildFile; fileRef = B21E759D1B325DEE00591D4B /* UIImage+WY.m */; };
 		B25CA4261B208F240077FEB5 /* WYTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = B25CA4251B208F240077FEB5 /* WYTopic.m */; };
 		B25CA42A1B208F960077FEB5 /* WYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B25CA4291B208F960077FEB5 /* WYModel.m */; };
 		B29013EA1B1562F400A9229F /* NewsURLs.plist in Resources */ = {isa = PBXBuildFile; fileRef = B29013E91B1562F400A9229F /* NewsURLs.plist */; };
@@ -72,6 +73,8 @@
 		B2073C701B2723CC000AFB1E /* WYWideImageNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYWideImageNewsCell.h; sourceTree = "<group>"; };
 		B2073C711B2723CC000AFB1E /* WYWideImageNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYWideImageNewsCell.m; sourceTree = "<group>"; };
 		B2073C731B2723FC000AFB1E /* WideImageNews.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WideImageNews.xib; sourceTree = "<group>"; };
+		B21E759C1B325DEE00591D4B /* UIImage+WY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WY.h"; sourceTree = "<group>"; };
+		B21E759D1B325DEE00591D4B /* UIImage+WY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WY.m"; sourceTree = "<group>"; };
 		B25CA4231B208E050077FEB5 /* APIInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIInfo.h; sourceTree = "<group>"; };
 		B25CA4241B208F240077FEB5 /* WYTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYTopic.h; sourceTree = "<group>"; };
 		B25CA4251B208F240077FEB5 /* WYTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYTopic.m; sourceTree = "<group>"; };
@@ -223,6 +226,8 @@
 		B2DD1CFB1B31AE8800AB7BE9 /* Catagory */ = {
 			isa = PBXGroup;
 			children = (
+				B21E759C1B325DEE00591D4B /* UIImage+WY.h */,
+				B21E759D1B325DEE00591D4B /* UIImage+WY.m */,
 			);
 			path = Catagory;
 			sourceTree = "<group>";
@@ -745,6 +750,7 @@
 				B2E5CEE91B1496180061EC8B /* DockController.m in Sources */,
 				B29014091B15D9E700A9229F /* WYNews.m in Sources */,
 				B29014021B15C25D00A9229F /* WYNetwork.m in Sources */,
+				B21E759E1B325DEE00591D4B /* UIImage+WY.m in Sources */,
 				B2E5CEED1B1496430061EC8B /* WYMainDockVC.m in Sources */,
 				B2E5CE861B14728E0061EC8B /* main.m in Sources */,
 			);

@@ -8,10 +8,9 @@
 
 #import "WYWideImageNewsCell.h"
 @interface WYWideImageNewsCell()
-@property (weak, nonatomic) IBOutlet UILabel *title;
-@property (weak, nonatomic) IBOutlet UIImageView *singleImageView;
-@property (weak, nonatomic) IBOutlet UILabel *digest;
-@property (weak, nonatomic) IBOutlet UILabel *votecount;
+{
+    __weak IBOutlet UILabel *_digest;
+}
 @end
 @implementation WYWideImageNewsCell
 + (id)cell
@@ -27,7 +26,8 @@
     }];
     _title.text = self.news.title;
     _digest.text = self.news.digest;
-    _votecount.text = [NSString stringWithFormat:@"%d跟帖", self.news.votecount];
+//    _votecount.text = [NSString stringWithFormat:@"%d跟帖", self.news.votecount];
+    [_votecount setTitle:[NSString stringWithFormat:@"%d跟帖", self.news.votecount] forState:UIControlStateDisabled];
 }
 
 /*
