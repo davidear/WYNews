@@ -21,6 +21,8 @@
 #define kWYNetworkTopicListURLStr           @"/nc/topicset/ios/subscribe/manage/listspecial.html"
 #define kWYNetWorkNewsListBaseStr           @"/nc/article/list"
 #define kWYNetWorkNewsListFetchOnceCount    20
+#define kWYNetWorkNewsDetailURLStr          @"http://c.3g.163.com/nc/article/%@/full.html"//%@为WYNews的docid
+
 //Dock
 #define kDockHeight 44
 

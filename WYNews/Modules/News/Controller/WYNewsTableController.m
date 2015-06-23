@@ -13,6 +13,7 @@
 #import "WYDefaultNewsCell.h"
 #import "WYImagesNewsCell.h"
 #import "WYWideImageNewsCell.h"
+#import "WYNewsDetailVC.h"
 @interface WYNewsTableController ()<UIScrollViewDelegate>
 
 @end
@@ -214,7 +215,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    WYNewsDetailVC *vc = [[WYNewsDetailVC alloc] init];
+    WYNews *news = _dataArray[indexPath.row];
+    vc.docid = news.docid;
+    vc.news = news;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 /*
 // Override to support conditional editing of the table view.

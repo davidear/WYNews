@@ -1,0 +1,48 @@
+<html><head>
+<meta name="viewport" content="target-densitydpi=device-dpi,width=640,user-scalable=no"/>
+<link href='content.css' rel='stylesheet'/>
+<script src="content.js"></script>
+{% if _hasYouku %}<script src="http://player.youku.com/jsapi"></script>{% /if %}
+<style type="text/css">
+body {font-family:{{normalFont}};}
+{% if boldFont %}
+body #title, .H1, .H2, b, strong, .bold_font{font-family:{{boldFont}};font-weight:normal;}
+{% else %}
+body #title, .H1, .H2, b, strong, .bold_font{font-weight:bold;}
+{% /if %}
+</style>
+{% if _customcss %}<link href='{{_customcss}}' rel='stylesheet'/>{% /if %}
+</head><body class="{{theme}}">
+{% if _customcss %}<div id="custom_template" aria-hidden="true"><div></div></div>{% /if %}
+<div id="title_section" class="{{fontClass}}">
+{% if _isDuanZi == NULL %}
+
+{% if title %}
+<div id='title'>{{title}}</div><div id='subtitle'>{{source}}　<span aria-hidden="true">{{ptime}}</span></div>
+{% else %}
+<div id='title'>此文章不存在</div><div id='subtitle'>　</div>
+{% /if %}
+
+{% /if %}
+</div>
+<div id="body_section" class="{{fontClass}}" lang="{{_lang}}">
+{% if digest %}<p><div class='PRE'>{{digest}}</div></p>{% /if %}
+{{body}}
+{% if ec %}<p align="right">（责任编辑：{{ec}}）</p>{% /if %}
+{% if source_url %}<p align="center"><a href="source:///{{source_url}}" class="border_link">查看原文<span></span></a></p>{% /if %}
+{% if _up_down %}{{_up_down}}{% /if %}
+{% if _share %}{{_share}}{% /if %}
+{% if _topics %}{{_topics}}{% /if %}
+</div>
+{% if _lottery_1 %}{{_lottery_1}}{% /if %}
+{% if _rel_1 %}{{_rel_1}}{% /if %}
+{% if _comments %}{{_comments}}{% /if %}
+{% if _rel_2 %}{{_rel_2}}{% /if %}
+{% if _lottery_2 %}{{_lottery_2}}{% /if %}
+{% if _lm_recommends %}
+<div class='section' aria-hidden='true'><div class='section_header'>相关推荐</div>
+    <div class='recommend_section section_body'>{{_lm_recommends}}</div>
+    <div class='section_footer'></div></div>
+{% /if %}
+{% if _ad %}{{_ad}}{% /if %}
+</body></html>

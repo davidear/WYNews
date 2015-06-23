@@ -1122,8 +1122,9 @@ T1370583240249为topic中的tid
 }
 
 #pragma mark - 获取news详情接口
-
+http://c.3g.163.com/nc/article/<#docid#>/full.html
 http://c.3g.163.com/nc/article/ASCNAQFU9001AQFV/full.html
+
 {
     "ASCNAQFU9001AQFV": {
         "template": "normal",

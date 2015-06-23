@@ -7,7 +7,7 @@
 //
 
 #import "WYMainDockVC.h"
-#import "WYNewsVC.h"
+#import "WYNewsMainVC.h"
 #import "WYReadVC.h"
 #import "WYVedioVC.h"
 #import "WYDiscoverVC.h"
@@ -31,7 +31,7 @@
 
 - (void)addChildVC
 {
-    [self addChildViewController:[[UINavigationController alloc] initWithRootViewController:[[WYNewsVC alloc] init]]];
+    [self addChildViewController:[[UINavigationController alloc] initWithRootViewController:[[WYNewsMainVC alloc] init]]];
     [self addChildViewController:[[UINavigationController alloc] initWithRootViewController:[[WYReadVC alloc] init]]];
     [self addChildViewController:[[UINavigationController alloc] initWithRootViewController:[[WYVedioVC alloc] init]]];
     [self addChildViewController:[[UINavigationController alloc] initWithRootViewController:[[WYDiscoverVC alloc] init]]];

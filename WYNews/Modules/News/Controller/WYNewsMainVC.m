@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 childrenOurFuture. All rights reserved.
 //
 
-#import "WYNewsVC.h"
+#import "WYNewsMainVC.h"
 #import "WYNetwork.h"
 #import "WYTopicHeader.h"
 #import "WYTopicScrollView.h"
@@ -14,11 +14,11 @@
 #import "WYNewsTableController.h"
 
 #import "WYTopic.h"
-@interface WYNewsVC () <UIScrollViewDelegate,TopicHeaderDelegate>
+@interface WYNewsMainVC () <UIScrollViewDelegate,TopicHeaderDelegate>
 
 @end
 
-@implementation WYNewsVC
+@implementation WYNewsMainVC
 {
     WYTopicHeader *_header;
     WYTopicScrollView *_topicScrollView;

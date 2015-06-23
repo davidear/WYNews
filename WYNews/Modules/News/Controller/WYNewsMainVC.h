@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WYNewsVC : UIViewController
+@interface WYNewsMainVC : UIViewController
 
 @end
