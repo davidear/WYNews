@@ -49,6 +49,7 @@
 - (void)initSubviews
 {
     _webView = [[UIWebView alloc] initWithFrame:CGRectMake(8, 0, kScreenWidth - 8 * 2, kScreenHeight)];
+    _webView.scalesPageToFit = YES;
     [self.view addSubview:_webView];
 }
 
