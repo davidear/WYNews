@@ -39,8 +39,7 @@
     [[WYNetwork sharedWYNetwork] HttpGet:urlStr parameter:nil success:^(id responseObject) {
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             _newsDetail = [WYNewsDetail objectWithKeyValues:[responseObject objectForKey:_docid]];
-//            [self makeTemplate];
-//            [blockSelf makeTemplate];
+            [blockSelf makeTemplate];
         }
     } failure:^(NSError *error) {
         
@@ -60,18 +59,32 @@
     [_engine setMatcher:[ICUTemplateMatcher matcherWithTemplateEngine:_engine]];
 }
 
-//- (void)makeTemplate
-//{
+- (void)makeTemplate
+{
 //    [_engine setObject:_newsDetail.body forKey:@"body"];
 //    [_engine setObject:@"content.css" forKey:@"_customcss"];
-//
-//    
-//    NSString *path = [[NSBundle mainBundle] pathForResource:@"content_template" ofType:@"html"];
-//    NSDictionary *variables = [NSDictionary dictionaryWithObjectsAndKeys:@"_hasYouku", @NO, @"boldFont", @NO, @"_customcss", @"content.css", @"_isDuanZi", @NO, @"title", _newsDetail.title, @"digest", _news.digest,  @"ec", @NO, @"source_url", @NO, @"_up_down", @NO, nil];
-//    NSDictionary *variables = [NSDictionary dictionaryWithObjectsAndKeys:@"title", _newsDetail.title, nil];
-//    NSString *result = [_engine processTemplateInFileAtPath:path withVariables:variables];
-//    NSLog(@"result is %@", result);
-//    
-//    [_webView loadHTMLString:result baseURL:nil];
-//}
+//    [_engine setObject:@YES forKey:@"_hasYouku"];
+//    [_engine setObject:@"宋体" forKey:@"normalFont"];
+//    [_engine setObject:@NO forKey:@"boldFont"];
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"content_template" ofType:@"html"];
+//    NSDictionary *variables = [NSDictionary dictionaryWithObjectsAndKeys:@"boldFont", @"宋体", @"_isDuanZi", @NO, @"title", _newsDetail.title, @"digest", _news.digest,  @"ec", @NO, @"source_url", @NO, @"_up_down", @NO, nil];
+//    NSDictionary *variables = [NSDictionary dictionaryWithObjectsAndKeys:_newsDetail.title, @"title", nil];
+    NSDictionary *variables = @{
+                                @"title" : _newsDetail.title,
+                                @"boldFont" : @NO,
+                                @"normalFont" : @"宋体",
+                                @"_hasYouku" : @NO,
+                                @"_customcss" : @"content.css",
+                                @"body" : _newsDetail.body,
+                                @"digest" : _news.digest,
+                                @"ec" : @NO,
+                                @"source_url" : @NO,
+                                @"_up_down" : @NO
+                                };
+    NSString *result = [_engine processTemplateInFileAtPath:path withVariables:variables];
+    NSLog(@"\n\n\nresult is %@", result);
+    
+    [_webView loadHTMLString:result baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] resourcePath]]];
+}
 @end

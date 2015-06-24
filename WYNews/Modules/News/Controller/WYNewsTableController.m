@@ -80,7 +80,7 @@
         NSMutableString *url = [NSMutableString stringWithString:kWYNetWorkNewsListBaseStr];
         [url appendFormat:@"/%@/%ld-%d.html", _tid, kWYNetWorkNewsListFetchOnceCount * _page, kWYNetWorkNewsListFetchOnceCount];
         [[WYNetwork sharedWYNetwork] HttpGetNews:url success:^(id responseObject) {
-            NSLog(@"abc");
+//            NSLog(@"abc");
             if (![responseObject isKindOfClass:[NSDictionary class]]) {
                 return;
             }
@@ -107,7 +107,7 @@
         NSMutableString *url = [NSMutableString stringWithString:kWYNetWorkNewsListBaseStr];
         [url appendFormat:@"/%@/%d-%d.html", _tid, 0, kWYNetWorkNewsListFetchOnceCount];
         [[WYNetwork sharedWYNetwork] HttpGetNews:url success:^(id responseObject) {
-            NSLog(@"abc");
+//            NSLog(@"abc");
             if (![responseObject isKindOfClass:[NSDictionary class]]) {
                 return;
             }

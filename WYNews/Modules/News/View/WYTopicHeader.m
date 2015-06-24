@@ -52,7 +52,7 @@
 {
     //网络获取topicList
     [[WYNetwork sharedWYNetwork] HttpGet:kWYNetworkTopicListURLStr parameter:nil success:^(id responseObject) {
-        NSLog(@"responseObject is %@", responseObject);
+//        NSLog(@"responseObject is %@", responseObject);
         if (responseObject != nil) {
             //根据hasIcon加到不同的数组
             NSMutableArray *selectedMutArray = [NSMutableArray array];

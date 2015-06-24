@@ -46,7 +46,7 @@
     int index = (int)abc_offsetX;
     float delta = abc_offsetX - index;
     WYCategoryLabel *oldLabel = self.subviews[index];
-    NSLog(@"old is %d , new is %d+1\n", index, index);
+//    NSLog(@"old is %d , new is %d+1\n", index, index);
     oldLabel.scale = 1 - delta;
     //最后一个
     if (index < _topicArray.count - 1) {
