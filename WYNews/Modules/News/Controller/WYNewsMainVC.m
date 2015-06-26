@@ -33,9 +33,9 @@
 }
 - (void)initSubviews
 {
-    [self.navigationController setNavigationBarHidden:NO];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"top_navigation_background"] forBarMetrics:UIBarMetricsDefault];
-    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navbar_netease"]];
+//    [self.navigationController setNavigationBarHidden:NO];
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"top_navigation_background"] forBarMetrics:UIBarMetricsDefault];
+//    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navbar_netease"]];
     
     UIButton *button1 = [UIButton buttonWithType:UIButtonTypeCustom];
     button1.frame = CGRectMake(0, 0, 48, 44);
@@ -43,7 +43,7 @@
     [button1 setImage:[UIImage imageNamed:@"top_navi_bell_normal"] forState:UIControlStateNormal];
     [button1 setImage:[UIImage  imageNamed:@"top_navi_bell_highlight"] forState:UIControlStateHighlighted];
     [button1 addTarget:self action:@selector(newsFor24Hours) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button1];
+    self.tabBarController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button1];
     
     UIButton *button2 = [UIButton buttonWithType:UIButtonTypeCustom];
     button2.frame = CGRectMake(0, 0, 48, 44);
@@ -51,9 +51,9 @@
     [button2 setImage:[UIImage imageNamed:@"top_navigation_square"] forState:UIControlStateNormal];
     //    [button2 setImage:[UIImage  imageNamed:@"top_navi_bell_highlight"] forState:UIControlStateHighlighted];
     [button2 addTarget:self action:@selector(naviRightBarButtonAciton) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button2];
+    self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button2];
     
-    _newsScrollView = [[WYNewsScrollView alloc] initWithFrame:CGRectMake(0, kTopicHeaderHeight, kScreenWidth, kScreenHeight - kTopicHeaderHeight - kDockHeight - 64)];
+    _newsScrollView = [[WYNewsScrollView alloc] initWithFrame:CGRectMake(0, kTopicHeaderHeight, kScreenWidth, kScreenHeight - kTopicHeaderHeight - kDockHeight - kNavigationBarHeight - kStatusBarHeight)];
     _newsScrollView.backgroundColor = [UIColor yellowColor];
     _newsScrollView.delegate = self;
     [self.view addSubview:_newsScrollView];

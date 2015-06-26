@@ -24,7 +24,11 @@
 #define kWYNetWorkNewsDetailURLStr          @"http://c.3g.163.com/nc/article/%@/full.html"//%@为WYNews的docid
 
 //Dock
-#define kDockHeight 44
+#define kDockHeight 49
+//NavigationBar
+#define kNavigationBarHeight    44
+#define kStatusBarHeight        20
+
 
 //WYNewsVC
 #define kTopicHeaderHeight      36

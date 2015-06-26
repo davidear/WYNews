@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
-#import "WYMainDockVC.h"
+//#import "WYMainDockVC.h"
+#import "WYNavigationController.h"
+#import "WYTabbarController.h"
 @interface AppDelegate ()
 
 @end
@@ -18,8 +20,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    WYMainDockVC *vc = [[WYMainDockVC alloc] init];
-    self.window.rootViewController = vc;
+    WYNavigationController *navi = [[WYNavigationController alloc] initWithRootViewController:[[WYTabbarController alloc] init]];
+    self.window.rootViewController = navi;
+    
+//    WYMainDockVC *vc = [[WYMainDockVC alloc] init];
+//    self.window.rootViewController = vc;
     [self.window makeKeyAndVisible];
     return YES;
 }

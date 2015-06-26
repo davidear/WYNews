@@ -43,6 +43,8 @@
 		B2E5CEE91B1496180061EC8B /* DockController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5CEE51B1496180061EC8B /* DockController.m */; };
 		B2E5CEEA1B1496180061EC8B /* DockItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5CEE71B1496180061EC8B /* DockItem.m */; };
 		B2E5CEED1B1496430061EC8B /* WYMainDockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5CEEC1B1496430061EC8B /* WYMainDockVC.m */; };
+		B2F1B2161B3D2C8900E98F1B /* WYTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F1B2151B3D2C8900E98F1B /* WYTabbarController.m */; };
+		B2F1B2191B3D2D7200E98F1B /* WYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F1B2181B3D2D7200E98F1B /* WYNavigationController.m */; };
 		B2F1E3ED1B20596E006C893F /* WYButtonChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F1E3E81B20596E006C893F /* WYButtonChooseView.m */; };
 		B2F1E3EE1B20596E006C893F /* WYButtonChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F1E3EA1B20596E006C893F /* WYButtonChooseViewController.m */; };
 		B2F1E3EF1B20596E006C893F /* WYLabelButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F1E3EC1B20596E006C893F /* WYLabelButton.m */; };
@@ -143,6 +145,10 @@
 		B2E5CEE71B1496180061EC8B /* DockItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DockItem.m; sourceTree = "<group>"; };
 		B2E5CEEB1B1496430061EC8B /* WYMainDockVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYMainDockVC.h; sourceTree = "<group>"; };
 		B2E5CEEC1B1496430061EC8B /* WYMainDockVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYMainDockVC.m; sourceTree = "<group>"; };
+		B2F1B2141B3D2C8900E98F1B /* WYTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYTabbarController.h; sourceTree = "<group>"; };
+		B2F1B2151B3D2C8900E98F1B /* WYTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYTabbarController.m; sourceTree = "<group>"; };
+		B2F1B2171B3D2D7200E98F1B /* WYNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYNavigationController.h; sourceTree = "<group>"; };
+		B2F1B2181B3D2D7200E98F1B /* WYNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYNavigationController.m; sourceTree = "<group>"; };
 		B2F1E3E71B20596E006C893F /* WYButtonChooseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYButtonChooseView.h; sourceTree = "<group>"; };
 		B2F1E3E81B20596E006C893F /* WYButtonChooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYButtonChooseView.m; sourceTree = "<group>"; };
 		B2F1E3E91B20596E006C893F /* WYButtonChooseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYButtonChooseViewController.h; sourceTree = "<group>"; };
@@ -602,6 +608,10 @@
 			children = (
 				B2E5CEEB1B1496430061EC8B /* WYMainDockVC.h */,
 				B2E5CEEC1B1496430061EC8B /* WYMainDockVC.m */,
+				B2F1B2141B3D2C8900E98F1B /* WYTabbarController.h */,
+				B2F1B2151B3D2C8900E98F1B /* WYTabbarController.m */,
+				B2F1B2171B3D2D7200E98F1B /* WYNavigationController.h */,
+				B2F1B2181B3D2D7200E98F1B /* WYNavigationController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -816,6 +826,7 @@
 				B2073C651B269916000AFB1E /* WYDefaultNewsCell.m in Sources */,
 				B2F675DA1B3A5D0300CCD863 /* MGTemplateEngine.m in Sources */,
 				B2F675DE1B3A5D0300CCD863 /* NSDictionary_DeepMutableCopy.m in Sources */,
+				B2F1B2161B3D2C8900E98F1B /* WYTabbarController.m in Sources */,
 				B2F675DD1B3A5D0300CCD863 /* NSArray_DeepMutableCopy.m in Sources */,
 				B2E5CE891B14728E0061EC8B /* AppDelegate.m in Sources */,
 				B2F1E3EE1B20596E006C893F /* WYButtonChooseViewController.m in Sources */,
@@ -835,6 +846,7 @@
 				B29013FB1B15A93B00A9229F /* WYBaseScrollView.m in Sources */,
 				B2F1E3EF1B20596E006C893F /* WYLabelButton.m in Sources */,
 				B29013FE1B15AB0E00A9229F /* WYNewsTableController.m in Sources */,
+				B2F1B2191B3D2D7200E98F1B /* WYNavigationController.m in Sources */,
 				B29013F51B15A70800A9229F /* WYNewsScrollView.m in Sources */,
 				B2E5CEE91B1496180061EC8B /* DockController.m in Sources */,
 				B29014091B15D9E700A9229F /* WYNews.m in Sources */,
