@@ -96,13 +96,13 @@
     [self.delegate topicArrayDidChanged:_buttonChooseVC.selectedArray];
 }
 
-//- (void)chooseViewDidSelected:(NSString *)tname
-//{
-//    for (int i = 0; i < _topicScrollView.topicArray.count; i++) {
-//        WYTopic *topic = _topicScrollView.topicArray[i];
-//        if ([tname isEqualToString:topic.tname]) {
-//            _topicScrollView.offsetX = i;
-//        }
-//    }
-//}
+- (void)chooseViewDidSelected:(NSString *)tname
+{
+    for (int i = 0; i < _topicScrollView.topicArray.count; i++) {
+        WYTopic *topic = _topicScrollView.topicArray[i];
+        if ([tname isEqualToString:topic.tname]) {
+            _topicScrollView.offsetX = i;
+        }
+    }
+}
 @end
