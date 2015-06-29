@@ -11,19 +11,64 @@
 #import "WYTopic.h"
 #import "WYNetwork.h"
 #define kWidthMargin        0
+@interface WYTopicScrollView ()
+@property (assign, nonatomic) NSInteger oldIndex;
+@end
 @implementation WYTopicScrollView
 {
     CGFloat _offsetX;
-    NSInteger _oldIndex;
 }
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self =[super initWithFrame:frame];
+    if (self) {
+        [self loadData];
+        [self registerNotification];
+    }
+    return self;
+}
+#pragma mark - 初始化
 - (void)setupUI
 {
     [super setupUI];
     _buttonChooseVC = [[WYButtonChooseViewController alloc] init];
     _buttonChooseVC.topicDelegate = self;
-    
-    [self loadData];
 }
+
+- (void)loadData
+{
+    //网络获取topicList
+    [[WYNetwork sharedWYNetwork] HttpGet:kWYNetworkTopicListURLStr parameter:nil success:^(id responseObject) {
+        //        NSLog(@"responseObject is %@", responseObject);
+        if (responseObject != nil) {
+            //根据hasIcon加到不同的数组
+            NSMutableArray *selectedMutArray = [NSMutableArray array];
+            NSMutableArray *unselectedMutArray = [NSMutableArray array];
+            NSArray *array = [responseObject objectForKey:@"tList"];
+            for (NSDictionary *dic in array) {
+                WYTopic *topic = [[WYTopic alloc] initWithDic:dic];
+                if (selectedMutArray.count < 24) {
+                    [selectedMutArray addObject:topic];
+                }else {
+                    [unselectedMutArray addObject:topic];
+                }
+            }
+            _buttonChooseVC.selectedArray = selectedMutArray;
+            _buttonChooseVC.unSelectedArray = unselectedMutArray;
+            self.topicArray = _buttonChooseVC.selectedArray;
+            [self.topicDelegate topicScrollViewDidChanged:_buttonChooseVC.selectedArray];
+        }
+    } failure:^(NSError *error) {
+        
+    }];
+    //相关赋值
+}
+
+- (void)registerNotification
+{
+    [self addObserver:self forKeyPath:@"oldIndex" options:NSKeyValueObservingOptionNew context:nil];
+}
+
 
 - (void)setTopicArray:(NSArray *)topicArray
 {
@@ -74,33 +119,10 @@
 }
 
 
-- (void)loadData
+#pragma mark - KVO
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    //网络获取topicList
-    [[WYNetwork sharedWYNetwork] HttpGet:kWYNetworkTopicListURLStr parameter:nil success:^(id responseObject) {
-        //        NSLog(@"responseObject is %@", responseObject);
-        if (responseObject != nil) {
-            //根据hasIcon加到不同的数组
-            NSMutableArray *selectedMutArray = [NSMutableArray array];
-            NSMutableArray *unselectedMutArray = [NSMutableArray array];
-            NSArray *array = [responseObject objectForKey:@"tList"];
-            for (NSDictionary *dic in array) {
-                WYTopic *topic = [[WYTopic alloc] initWithDic:dic];
-                if (selectedMutArray.count < 24) {
-                    [selectedMutArray addObject:topic];
-                }else {
-                    [unselectedMutArray addObject:topic];
-                }
-            }
-            _buttonChooseVC.selectedArray = selectedMutArray;
-            _buttonChooseVC.unSelectedArray = unselectedMutArray;
-            self.topicArray = _buttonChooseVC.selectedArray;
-            [self.topicDelegate topicScrollViewDidChanged:_buttonChooseVC.selectedArray];
-        }
-    } failure:^(NSError *error) {
-        
-    }];
-    //相关赋值
+    
 }
 
 #pragma mark - Button Action
@@ -127,7 +149,7 @@
     for (int i = 0; i < _topicArray.count; i++) {
         WYTopic *topic = _topicArray[i];
         if ([tname isEqualToString:topic.tname]) {
-            _offsetX = i;
+            [self categoryButtonSelected:self.subviews[i]];
         }
     }
 }
