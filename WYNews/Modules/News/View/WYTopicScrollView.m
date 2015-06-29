@@ -88,11 +88,13 @@
         }
         [self addSubview:button];
     }
-    self.offsetX = 0;
     self.contentSize = CGSizeMake(CGRectGetMaxX([self.subviews.lastObject frame]) + kWidthMargin, 0);
+    self.offsetX = 0;
+    
     
 }
 
+//这个方法需要精简，影响性能
 -(void)setOffsetX:(CGFloat)offsetX
 {
     _offsetX = offsetX;
@@ -110,7 +112,11 @@
         WYCategoryButton *newbutton = self.subviews[index + 1];
         newbutton.scale = delta;
     }
-    _oldIndex = index;
+    //整数才赋值
+    if (index == abc_offsetX) {
+        self.oldIndex = index;
+    }
+
 }
 
 - (CGFloat)offsetX
@@ -122,7 +128,24 @@
 #pragma mark - KVO
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    
+    NSLog(@"oldIndex is %ld", _oldIndex);
+    UIView *oldView = self.subviews[_oldIndex];
+    if (oldView.frame.origin.x < 0) {
+        [self setContentOffset:CGPointMake(oldView.frame.origin.x, 0) animated:NO];
+        return;
+    }
+    if (oldView.frame.origin.x  < self.contentOffset.x) {
+        [self setContentOffset:CGPointMake(oldView.frame.origin.x, 0) animated:YES];
+    }
+    if (CGRectGetMaxX(oldView.frame) > self.contentOffset.x + self.bounds.size.width) {
+        [self setContentOffset:CGPointMake(CGRectGetMaxX(oldView.frame) - self.bounds.size.width, 0) animated:YES];
+    }
+//    if (_oldIndex < self.contentOffset.x) {
+//        [self setContentOffset:CGPointMake(_oldIndex, 0) animated:YES];
+//    }
+//    if (_oldIndex > self.contentOffset.x + self.bounds.size.width) {
+//        [self setContentOffset:CGPointMake(_oldIndex - self.bounds.size.width, 0)];
+//    }
 }
 
 #pragma mark - Button Action
@@ -133,7 +156,7 @@
     WYCategoryButton *oldButton = self.subviews[_oldIndex];
     oldButton.scale = 0;
     sender.scale = 0;
-    _oldIndex = _offsetX;
+    self.oldIndex = _offsetX;
     
     [self.topicDelegate topicScrollViewDidSelectButton:_offsetX];
 }

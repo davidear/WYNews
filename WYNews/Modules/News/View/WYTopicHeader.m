@@ -87,7 +87,7 @@
 //    }
     
     //showInView
-    [_topicScrollView.buttonChooseVC showInView:sender.superview.superview];
+    [_topicScrollView.buttonChooseVC showInView:self.superview];
 }
 //#pragma mark - WYButtonChooseDelegate
 //- (void)buttonChooseViewTopicArrayDidChange:(NSArray *)topicArray
