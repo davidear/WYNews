@@ -7,7 +7,7 @@
 //
 
 #import "WYCategoryButton.h"
-#define kLabelSideMargin        15
+#define kLabelSideMargin        30
 #define kTopicLabelFont         14
 @implementation WYCategoryButton
 - (instancetype)init
@@ -25,7 +25,7 @@
     [super setTitle:title forState:state];
     CGSize size = [title sizeWithAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:kTopicLabelFont]}];
     size.height = kTopicHeaderHeight;
-    size.width += size.width + kLabelSideMargin;
+    size.width = size.width + kLabelSideMargin;
     self.frame = (CGRect){self.bounds.origin, size};
 }
 
@@ -38,6 +38,6 @@
 //    NSLog(@"scale is %f", _scale);
     [self setTitleColor:[UIColor colorWithRed:(scale * (221.0 - 104.0) + 104.0)/255 green:(scale * (50.0 - 104.0) + 104.0)/255 blue:(scale * (55.0 - 104.0) + 104.0)/255 alpha:1] forState:UIControlStateNormal];
 //    NSLog(@"\ncolor is %@", self.titleLabel.textColor);
-    self.transform = CGAffineTransformMakeScale(1 + 0.3 * scale, 1 + 0.3 * scale);
+    self.titleLabel.font = [UIFont systemFontOfSize:kTopicLabelFont * (1 + 0.3 * scale)];
 }
 @end

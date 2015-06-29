@@ -130,7 +130,7 @@
 {
     NSLog(@"oldIndex is %ld", _oldIndex);
     UIView *oldView = self.subviews[_oldIndex];
-    if (oldView.frame.origin.x < 0) {
+    if (oldView.frame.origin.x < 0) {//for the first load
         [self setContentOffset:CGPointMake(oldView.frame.origin.x, 0) animated:NO];
         return;
     }
