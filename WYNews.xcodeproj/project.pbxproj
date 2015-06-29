@@ -29,6 +29,7 @@
 		B29014021B15C25D00A9229F /* WYNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = B29014011B15C25D00A9229F /* WYNetwork.m */; };
 		B29014061B15C86700A9229F /* WYtool.m in Sources */ = {isa = PBXBuildFile; fileRef = B29014051B15C86700A9229F /* WYtool.m */; };
 		B29014091B15D9E700A9229F /* WYNews.m in Sources */ = {isa = PBXBuildFile; fileRef = B29014081B15D9E700A9229F /* WYNews.m */; };
+		B2A600011B4126E400D0F4C2 /* WYCategoryButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A600001B4126E400D0F4C2 /* WYCategoryButton.m */; };
 		B2E5CE861B14728E0061EC8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5CE851B14728E0061EC8B /* main.m */; };
 		B2E5CE891B14728E0061EC8B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5CE881B14728E0061EC8B /* AppDelegate.m */; };
 		B2E5CE911B14728E0061EC8B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2E5CE901B14728E0061EC8B /* Images.xcassets */; };
@@ -117,6 +118,8 @@
 		B29014051B15C86700A9229F /* WYtool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYtool.m; sourceTree = "<group>"; };
 		B29014071B15D9E700A9229F /* WYNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYNews.h; sourceTree = "<group>"; };
 		B29014081B15D9E700A9229F /* WYNews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYNews.m; sourceTree = "<group>"; };
+		B2A600001B4126E400D0F4C2 /* WYCategoryButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYCategoryButton.m; sourceTree = "<group>"; };
+		B2A6FFFF1B4126E400D0F4C2 /* WYCategoryButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYCategoryButton.h; sourceTree = "<group>"; };
 		B2E5CE801B14728E0061EC8B /* WYNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WYNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2E5CE841B14728E0061EC8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2E5CE851B14728E0061EC8B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -495,6 +498,8 @@
 				B2F1E3F11B206783006C893F /* WYTopicHeader.m */,
 				B29013EB1B15641000A9229F /* WYCategoryLabel.h */,
 				B29013EC1B15641000A9229F /* WYCategoryLabel.m */,
+				B2A6FFFF1B4126E400D0F4C2 /* WYCategoryButton.h */,
+				B2A600001B4126E400D0F4C2 /* WYCategoryButton.m */,
 				B29013F01B1573A400A9229F /* WYTopicScrollView.h */,
 				B29013F11B1573A400A9229F /* WYTopicScrollView.m */,
 				B29013F31B15A70800A9229F /* WYNewsScrollView.h */,
@@ -827,6 +832,7 @@
 				B2F675DA1B3A5D0300CCD863 /* MGTemplateEngine.m in Sources */,
 				B2F675DE1B3A5D0300CCD863 /* NSDictionary_DeepMutableCopy.m in Sources */,
 				B2F1B2161B3D2C8900E98F1B /* WYTabbarController.m in Sources */,
+				B2A600011B4126E400D0F4C2 /* WYCategoryButton.m in Sources */,
 				B2F675DD1B3A5D0300CCD863 /* NSArray_DeepMutableCopy.m in Sources */,
 				B2E5CE891B14728E0061EC8B /* AppDelegate.m in Sources */,
 				B2F1E3EE1B20596E006C893F /* WYButtonChooseViewController.m in Sources */,

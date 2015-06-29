@@ -9,9 +9,10 @@
 #import "WYBaseScrollView.h"
 #import "WYButtonChooseViewController.h"
 @protocol TopicScrollViewDelegate <NSObject>
-- (void)topicArrayDidChanged:(NSArray *)selectedArray;
+- (void)topicScrollViewDidChanged:(NSArray *)selectedArray;
+- (void)topicScrollViewDidSelectButton:(NSInteger)selectedButtonIndex;
 @end
-@interface WYTopicScrollView : WYBaseScrollView <WYTopicSelectionDelegate>
+@interface WYTopicScrollView : WYBaseScrollView <WYButtonChooseViewDelegate>
 @property (weak, nonatomic) id<TopicScrollViewDelegate> topicDelegate;
 @property (strong, nonatomic) WYButtonChooseViewController *buttonChooseVC;
 @property (weak, nonatomic) NSArray *topicArray;

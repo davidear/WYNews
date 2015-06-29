@@ -7,13 +7,14 @@
 //
 
 #import "WYTopicScrollView.h"
-#import "WYCategoryLabel.h"
+#import "WYCategoryButton.h"
 #import "WYTopic.h"
 #import "WYNetwork.h"
 #define kWidthMargin        0
 @implementation WYTopicScrollView
 {
     CGFloat _offsetX;
+    NSInteger _oldIndex;
 }
 - (void)setupUI
 {
@@ -31,14 +32,16 @@
     for (int i = 0; i < _topicArray.count; i++) {
         WYTopic *topic = _topicArray[i];
         
-        WYCategoryLabel *label = [[WYCategoryLabel alloc] init];
-        label.text = topic.tname;
+        WYCategoryButton *button = [[WYCategoryButton alloc] init];
+//        button.text = topic.tname;
+        [button setTitle:topic.tname forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(categoryButtonSelected:) forControlEvents:UIControlEventTouchUpInside];
         if (self.subviews.count == 0) {
-            label.frame = (CGRect){CGPointMake(kWidthMargin, 0), label.bounds.size};
+            button.frame = (CGRect){CGPointMake(kWidthMargin, 0), button.bounds.size};
         }else {
-            label.frame = (CGRect){CGPointMake(CGRectGetMaxX([self.subviews.lastObject frame]) + kWidthMargin, 0), label.bounds.size};
+            button.frame = (CGRect){CGPointMake(CGRectGetMaxX([self.subviews.lastObject frame]) + kWidthMargin, 0), button.bounds.size};
         }
-        [self addSubview:label];
+        [self addSubview:button];
     }
     self.offsetX = 0;
     self.contentSize = CGSizeMake(CGRectGetMaxX([self.subviews.lastObject frame]) + kWidthMargin, 0);
@@ -54,14 +57,15 @@
     float abc_offsetX = ABS(_offsetX);
     int index = (int)abc_offsetX;
     float delta = abc_offsetX - index;
-    WYCategoryLabel *oldLabel = self.subviews[index];
-    //    NSLog(@"old is %d , new is %d+1\n", index, index);
-    oldLabel.scale = 1 - delta;
+    WYCategoryButton *oldButton = self.subviews[index];
+//    NSLog(@"old is %d , new is %d+1\n, index is %d", _oldIndex, _oldIndex + 1, index);
+    oldButton.scale = 1 - delta;
     //最后一个
     if (index < _topicArray.count - 1) {
-        WYCategoryLabel *newLabel = self.subviews[index + 1];
-        newLabel.scale = delta;
+        WYCategoryButton *newbutton = self.subviews[index + 1];
+        newbutton.scale = delta;
     }
+    _oldIndex = index;
 }
 
 - (CGFloat)offsetX
@@ -91,18 +95,31 @@
             _buttonChooseVC.selectedArray = selectedMutArray;
             _buttonChooseVC.unSelectedArray = unselectedMutArray;
             self.topicArray = _buttonChooseVC.selectedArray;
-            [self.topicDelegate topicArrayDidChanged:_buttonChooseVC.selectedArray];
+            [self.topicDelegate topicScrollViewDidChanged:_buttonChooseVC.selectedArray];
         }
     } failure:^(NSError *error) {
         
     }];
     //相关赋值
 }
-#pragma mark - WYTopicSelectionDelegate
+
+#pragma mark - Button Action
+- (void)categoryButtonSelected:(WYCategoryButton *)sender
+{
+    //可优化,实现新旧按钮的变化
+    _offsetX = [self.subviews indexOfObject:sender];
+    WYCategoryButton *oldButton = self.subviews[_oldIndex];
+    oldButton.scale = 0;
+    sender.scale = 0;
+    _oldIndex = _offsetX;
+    
+    [self.topicDelegate topicScrollViewDidSelectButton:_offsetX];
+}
+#pragma mark - WYButtonChooseViewDelegate
 - (void)topicArrayDidChange:(NSArray *)topicArray
 {
     self.topicArray = _buttonChooseVC.selectedArray;
-    [self.topicDelegate topicArrayDidChanged:_buttonChooseVC.selectedArray];
+    [self.topicDelegate topicScrollViewDidChanged:_buttonChooseVC.selectedArray];
 }
 
 - (void)chooseViewDidSelected:(NSString *)tname

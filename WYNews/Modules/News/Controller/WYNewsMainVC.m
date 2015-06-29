@@ -146,8 +146,14 @@
     
 }
 #pragma mark - TopicHeaderDelegate
-- (void)topicArrayDidChanged:(NSArray *)selectedArray
+- (void)topicScrollViewDidChanged:(NSArray *)selectedArray
 {
     [self refreshChildVCs];
+}
+
+- (void)topicScrollViewDidSelectButton:(NSInteger)selectedButtonIndex
+{
+    [_newsScrollView setContentOffset:CGPointMake(_topicScrollView.offsetX * _newsScrollView.bounds.size.width, 0)
+     ];
 }
 @end

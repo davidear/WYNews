@@ -69,7 +69,7 @@
 //            _buttonChooseVC.selectedArray = selectedMutArray;
 //            _buttonChooseVC.unSelectedArray = unselectedMutArray;
 //            _topicScrollView.topicArray = _buttonChooseVC.selectedArray;
-//            [self.delegate topicArrayDidChanged:_buttonChooseVC.selectedArray];
+//            [self.delegate topicScrollViewDidChanged:_buttonChooseVC.selectedArray];
 //        }
 //    } failure:^(NSError *error) {
 //        
@@ -89,11 +89,11 @@
     //showInView
     [_topicScrollView.buttonChooseVC showInView:sender.superview.superview];
 }
-//#pragma mark - WYTopicSelectionDelegate
+//#pragma mark - WYButtonChooseViewDelegate
 //- (void)topicArrayDidChange:(NSArray *)topicArray
 //{
 //    _topicScrollView.topicArray = _buttonChooseVC.selectedArray;
-//    [self.delegate topicArrayDidChanged:_buttonChooseVC.selectedArray];
+//    [self.delegate topicScrollViewDidChanged:_buttonChooseVC.selectedArray];
 //}
 //
 //- (void)chooseViewDidSelected:(NSString *)tname

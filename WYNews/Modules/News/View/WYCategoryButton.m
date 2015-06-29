@@ -1,31 +1,29 @@
 //
-//  WYLabel.m
+//  WYCategoryButton.m
 //  WYNews
 //
-//  Created by dai.fengyi on 15/5/27.
+//  Created by dai.fengyi on 15/6/29.
 //  Copyright (c) 2015年 childrenOurFuture. All rights reserved.
 //
 
-#import "WYCategoryLabel.h"
+#import "WYCategoryButton.h"
 #define kLabelSideMargin        15
 #define kTopicLabelFont         14
-@implementation WYCategoryLabel
-
+@implementation WYCategoryButton
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        self.textAlignment = NSTextAlignmentCenter;
-        self.textColor = [UIColor blackColor];
-        self.font = [UIFont systemFontOfSize:kTopicLabelFont];
+        [self setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+        self.titleLabel.font = [UIFont systemFontOfSize:kTopicLabelFont];
     }
     return self;
 }
 
-- (void)setText:(NSString *)text
+- (void)setTitle:(NSString *)title forState:(UIControlState)state
 {
-    [super setText:text];
-    CGSize size = [text sizeWithAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:kTopicLabelFont]}];
+    [super setTitle:title forState:state];
+    CGSize size = [title sizeWithAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:kTopicLabelFont]}];
     size.height = kTopicHeaderHeight;
     size.width += size.width + kLabelSideMargin;
     self.frame = (CGRect){self.bounds.origin, size};
@@ -38,10 +36,8 @@
 {
     _scale = scale;
 //    NSLog(@"scale is %f", _scale);
-    self.textColor = [UIColor colorWithRed:scale * 221.0/255 green:scale * 50.0/255 blue:scale * 55/255 alpha:1];
-//    NSLog(@"\ncolor is %@", self.textColor);
-//    self.layer.transform = CATransform3DMakeScale(1 + 0.3 * scale, 1 + 0.3 * scale, 1);
+    [self setTitleColor:[UIColor colorWithRed:(scale * (221.0 - 104.0) + 104.0)/255 green:(scale * (50.0 - 104.0) + 104.0)/255 blue:(scale * (55.0 - 104.0) + 104.0)/255 alpha:1] forState:UIControlStateNormal];
+//    NSLog(@"\ncolor is %@", self.titleLabel.textColor);
     self.transform = CGAffineTransformMakeScale(1 + 0.3 * scale, 1 + 0.3 * scale);
-
 }
 @end
