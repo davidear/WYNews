@@ -16,7 +16,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self initSubviews];
-        [self loadData];
+//        [self loadData];
     }
     return self;
 }
@@ -44,38 +44,38 @@
     [spreadButton addTarget:self action:@selector(spreadChooseView:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:spreadButton];
     
-    _buttonChooseVC = [[WYButtonChooseViewController alloc] init];
-    _buttonChooseVC.topicDelegate = self;
+//    _buttonChooseVC = [[WYButtonChooseViewController alloc] init];
+//    _buttonChooseVC.topicDelegate = self;
 }
 
-- (void)loadData
-{
-    //网络获取topicList
-    [[WYNetwork sharedWYNetwork] HttpGet:kWYNetworkTopicListURLStr parameter:nil success:^(id responseObject) {
-//        NSLog(@"responseObject is %@", responseObject);
-        if (responseObject != nil) {
-            //根据hasIcon加到不同的数组
-            NSMutableArray *selectedMutArray = [NSMutableArray array];
-            NSMutableArray *unselectedMutArray = [NSMutableArray array];
-            NSArray *array = [responseObject objectForKey:@"tList"];
-            for (NSDictionary *dic in array) {
-                WYTopic *topic = [[WYTopic alloc] initWithDic:dic];
-                if (selectedMutArray.count < 24) {
-                    [selectedMutArray addObject:topic];
-                }else {
-                    [unselectedMutArray addObject:topic];
-                }
-            }
-            _buttonChooseVC.selectedArray = selectedMutArray;
-            _buttonChooseVC.unSelectedArray = unselectedMutArray;
-            _topicScrollView.topicArray = _buttonChooseVC.selectedArray;
-            [self.delegate topicArrayDidChanged:_buttonChooseVC.selectedArray];
-        }
-    } failure:^(NSError *error) {
-        
-    }];
-    //相关赋值
-}
+//- (void)loadData
+//{
+//    //网络获取topicList
+//    [[WYNetwork sharedWYNetwork] HttpGet:kWYNetworkTopicListURLStr parameter:nil success:^(id responseObject) {
+////        NSLog(@"responseObject is %@", responseObject);
+//        if (responseObject != nil) {
+//            //根据hasIcon加到不同的数组
+//            NSMutableArray *selectedMutArray = [NSMutableArray array];
+//            NSMutableArray *unselectedMutArray = [NSMutableArray array];
+//            NSArray *array = [responseObject objectForKey:@"tList"];
+//            for (NSDictionary *dic in array) {
+//                WYTopic *topic = [[WYTopic alloc] initWithDic:dic];
+//                if (selectedMutArray.count < 24) {
+//                    [selectedMutArray addObject:topic];
+//                }else {
+//                    [unselectedMutArray addObject:topic];
+//                }
+//            }
+//            _buttonChooseVC.selectedArray = selectedMutArray;
+//            _buttonChooseVC.unSelectedArray = unselectedMutArray;
+//            _topicScrollView.topicArray = _buttonChooseVC.selectedArray;
+//            [self.delegate topicArrayDidChanged:_buttonChooseVC.selectedArray];
+//        }
+//    } failure:^(NSError *error) {
+//        
+//    }];
+//    //相关赋值
+//}
 - (void)spreadChooseView:(UIButton *)sender
 {
 //    //数组赋值
@@ -87,22 +87,22 @@
 //    }
     
     //showInView
-    [_buttonChooseVC showInView:sender.superview.superview];
+    [_topicScrollView.buttonChooseVC showInView:sender.superview.superview];
 }
-#pragma mark - WYTopicSelectionDelegate
-- (void)topicArrayDidChange:(NSArray *)topicArray
-{
-    _topicScrollView.topicArray = _buttonChooseVC.selectedArray;
-    [self.delegate topicArrayDidChanged:_buttonChooseVC.selectedArray];
-}
-
-- (void)chooseViewDidSelected:(NSString *)tname
-{
-    for (int i = 0; i < _topicScrollView.topicArray.count; i++) {
-        WYTopic *topic = _topicScrollView.topicArray[i];
-        if ([tname isEqualToString:topic.tname]) {
-            _topicScrollView.offsetX = i;
-        }
-    }
-}
+//#pragma mark - WYTopicSelectionDelegate
+//- (void)topicArrayDidChange:(NSArray *)topicArray
+//{
+//    _topicScrollView.topicArray = _buttonChooseVC.selectedArray;
+//    [self.delegate topicArrayDidChanged:_buttonChooseVC.selectedArray];
+//}
+//
+//- (void)chooseViewDidSelected:(NSString *)tname
+//{
+//    for (int i = 0; i < _topicScrollView.topicArray.count; i++) {
+//        WYTopic *topic = _topicScrollView.topicArray[i];
+//        if ([tname isEqualToString:topic.tname]) {
+//            _topicScrollView.offsetX = i;
+//        }
+//    }
+//}
 @end

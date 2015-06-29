@@ -7,8 +7,13 @@
 //
 
 #import "WYBaseScrollView.h"
-
-@interface WYTopicScrollView : WYBaseScrollView
+#import "WYButtonChooseViewController.h"
+@protocol TopicScrollViewDelegate <NSObject>
+- (void)topicArrayDidChanged:(NSArray *)selectedArray;
+@end
+@interface WYTopicScrollView : WYBaseScrollView <WYTopicSelectionDelegate>
+@property (weak, nonatomic) id<TopicScrollViewDelegate> topicDelegate;
+@property (strong, nonatomic) WYButtonChooseViewController *buttonChooseVC;
 @property (weak, nonatomic) NSArray *topicArray;
 @property (assign, nonatomic) CGFloat offsetX;  //两个scrollView靠offsetX联系起来
 @end

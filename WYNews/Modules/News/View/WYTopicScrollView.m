@@ -9,6 +9,7 @@
 #import "WYTopicScrollView.h"
 #import "WYCategoryLabel.h"
 #import "WYTopic.h"
+#import "WYNetwork.h"
 #define kWidthMargin        0
 @implementation WYTopicScrollView
 {
@@ -17,6 +18,10 @@
 - (void)setupUI
 {
     [super setupUI];
+    _buttonChooseVC = [[WYButtonChooseViewController alloc] init];
+    _buttonChooseVC.topicDelegate = self;
+    
+    [self loadData];
 }
 
 - (void)setTopicArray:(NSArray *)topicArray
@@ -37,6 +42,7 @@
     }
     self.offsetX = 0;
     self.contentSize = CGSizeMake(CGRectGetMaxX([self.subviews.lastObject frame]) + kWidthMargin, 0);
+    
 }
 
 -(void)setOffsetX:(CGFloat)offsetX
@@ -61,5 +67,51 @@
 - (CGFloat)offsetX
 {
     return _offsetX;
+}
+
+
+- (void)loadData
+{
+    //网络获取topicList
+    [[WYNetwork sharedWYNetwork] HttpGet:kWYNetworkTopicListURLStr parameter:nil success:^(id responseObject) {
+        //        NSLog(@"responseObject is %@", responseObject);
+        if (responseObject != nil) {
+            //根据hasIcon加到不同的数组
+            NSMutableArray *selectedMutArray = [NSMutableArray array];
+            NSMutableArray *unselectedMutArray = [NSMutableArray array];
+            NSArray *array = [responseObject objectForKey:@"tList"];
+            for (NSDictionary *dic in array) {
+                WYTopic *topic = [[WYTopic alloc] initWithDic:dic];
+                if (selectedMutArray.count < 24) {
+                    [selectedMutArray addObject:topic];
+                }else {
+                    [unselectedMutArray addObject:topic];
+                }
+            }
+            _buttonChooseVC.selectedArray = selectedMutArray;
+            _buttonChooseVC.unSelectedArray = unselectedMutArray;
+            self.topicArray = _buttonChooseVC.selectedArray;
+            [self.topicDelegate topicArrayDidChanged:_buttonChooseVC.selectedArray];
+        }
+    } failure:^(NSError *error) {
+        
+    }];
+    //相关赋值
+}
+#pragma mark - WYTopicSelectionDelegate
+- (void)topicArrayDidChange:(NSArray *)topicArray
+{
+    self.topicArray = _buttonChooseVC.selectedArray;
+    [self.topicDelegate topicArrayDidChanged:_buttonChooseVC.selectedArray];
+}
+
+- (void)chooseViewDidSelected:(NSString *)tname
+{
+    for (int i = 0; i < _topicArray.count; i++) {
+        WYTopic *topic = _topicArray[i];
+        if ([tname isEqualToString:topic.tname]) {
+            _offsetX = i;
+        }
+    }
 }
 @end

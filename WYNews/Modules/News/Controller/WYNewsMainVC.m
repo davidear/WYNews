@@ -14,13 +14,12 @@
 #import "WYNewsTableController.h"
 
 #import "WYTopic.h"
-@interface WYNewsMainVC () <UIScrollViewDelegate,TopicHeaderDelegate>
+@interface WYNewsMainVC () <UIScrollViewDelegate,TopicScrollViewDelegate>
 
 @end
 
 @implementation WYNewsMainVC
 {
-    WYTopicHeader *_header;
     WYTopicScrollView *_topicScrollView;
     WYNewsScrollView *_newsScrollView;
 }
@@ -58,11 +57,12 @@
     _newsScrollView.delegate = self;
     [self.view addSubview:_newsScrollView];
     
-    _header = [[WYTopicHeader alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kTopicHeaderHeight)];
+    WYTopicHeader *header = [[WYTopicHeader alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kTopicHeaderHeight)];
     //    _header.backgroundColor = [UIColor blueColor];
-    _header.delegate = self;
-    _topicScrollView = _header.topicScrollView;
-    [self.view addSubview:_header];
+//    header.delegate = self;
+    _topicScrollView = header.topicScrollView;
+    _topicScrollView.topicDelegate = self;
+    [self.view addSubview:header];
 }
 - (void)loadData
 {
