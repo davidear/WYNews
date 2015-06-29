@@ -1,6 +1,6 @@
 #pragma mark - 获取新闻topic列表
 http://c.m.163.com/nc/topicset/ios/subscribe/manage/listspecial.html
-
+http://c.3g.163.com/nc/topicset/ios/subscribe/manage/listspecial.html
 {
     "tList": [
               {
