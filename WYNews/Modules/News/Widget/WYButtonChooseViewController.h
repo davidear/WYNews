@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-@protocol WYButtonChooseViewDelegate <NSObject>
-- (void)chooseViewDidSelected:(NSString *)tname;
-- (void)topicArrayDidChange:(NSArray *)topicArray;
+@protocol WYButtonChooseDelegate <NSObject>
+- (void)buttonChooseViewDidSelected:(NSString *)tname;
+- (void)buttonChooseViewTopicArrayDidChange:(NSArray *)topicArray;
 @end
 @interface WYButtonChooseViewController : UIViewController
-@property (weak, nonatomic) id<WYButtonChooseViewDelegate> topicDelegate;
+@property (weak, nonatomic) id<WYButtonChooseDelegate> topicDelegate;
 @property (strong, nonatomic) NSMutableArray *selectedArray;//装字典
 @property (strong, nonatomic) NSMutableArray *unSelectedArray;//装字典
 

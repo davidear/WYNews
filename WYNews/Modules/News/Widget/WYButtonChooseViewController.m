@@ -197,7 +197,7 @@
         [self.view removeFromSuperview];
     }];
     //2. 通知topicDelegate数据改动
-    [self.topicDelegate topicArrayDidChange:_selectedArray];
+    [self.topicDelegate buttonChooseViewTopicArrayDidChange:_selectedArray];
 }
 
 
@@ -213,7 +213,7 @@
             //1. 收view
             [self spreadAction:nil];
             //2. 通知topicDelegate所选
-            [self.topicDelegate chooseViewDidSelected:button.titleLabel.text];
+            [self.topicDelegate buttonChooseViewDidSelected:button.titleLabel.text];
         }
     }else {
         [_topChooseView addButtonWith:button.titleLabel.text position:[_topChooseView convertPoint:button.frame.origin fromView:_bottomChooseView]];

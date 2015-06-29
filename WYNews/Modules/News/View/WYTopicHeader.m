@@ -89,14 +89,14 @@
     //showInView
     [_topicScrollView.buttonChooseVC showInView:sender.superview.superview];
 }
-//#pragma mark - WYButtonChooseViewDelegate
-//- (void)topicArrayDidChange:(NSArray *)topicArray
+//#pragma mark - WYButtonChooseDelegate
+//- (void)buttonChooseViewTopicArrayDidChange:(NSArray *)topicArray
 //{
 //    _topicScrollView.topicArray = _buttonChooseVC.selectedArray;
 //    [self.delegate topicScrollViewDidChanged:_buttonChooseVC.selectedArray];
 //}
 //
-//- (void)chooseViewDidSelected:(NSString *)tname
+//- (void)buttonChooseViewDidSelected:(NSString *)tname
 //{
 //    for (int i = 0; i < _topicScrollView.topicArray.count; i++) {
 //        WYTopic *topic = _topicScrollView.topicArray[i];

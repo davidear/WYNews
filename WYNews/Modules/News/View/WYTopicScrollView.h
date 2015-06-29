@@ -12,7 +12,7 @@
 - (void)topicScrollViewDidChanged:(NSArray *)selectedArray;
 - (void)topicScrollViewDidSelectButton:(NSInteger)selectedButtonIndex;
 @end
-@interface WYTopicScrollView : WYBaseScrollView <WYButtonChooseViewDelegate>
+@interface WYTopicScrollView : WYBaseScrollView <WYButtonChooseDelegate>
 @property (weak, nonatomic) id<TopicScrollViewDelegate> topicDelegate;
 @property (strong, nonatomic) WYButtonChooseViewController *buttonChooseVC;
 @property (weak, nonatomic) NSArray *topicArray;

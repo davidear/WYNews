@@ -137,14 +137,14 @@
     
     [self.topicDelegate topicScrollViewDidSelectButton:_offsetX];
 }
-#pragma mark - WYButtonChooseViewDelegate
-- (void)topicArrayDidChange:(NSArray *)topicArray
+#pragma mark - WYButtonChooseDelegate
+- (void)buttonChooseViewTopicArrayDidChange:(NSArray *)topicArray
 {
     self.topicArray = _buttonChooseVC.selectedArray;
     [self.topicDelegate topicScrollViewDidChanged:_buttonChooseVC.selectedArray];
 }
 
-- (void)chooseViewDidSelected:(NSString *)tname
+- (void)buttonChooseViewDidSelected:(NSString *)tname
 {
     for (int i = 0; i < _topicArray.count; i++) {
         WYTopic *topic = _topicArray[i];
