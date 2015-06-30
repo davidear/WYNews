@@ -172,6 +172,7 @@
 #pragma mark - button Action
 - (void)switchAction:(UIButton *)sender
 {
+    
     UILabel *label = _header.subviews[0];
     UIButton *button2 = _header.subviews[2];
     if ([button2.titleLabel.text isEqualToString:@"排序删除"]) {
@@ -180,12 +181,18 @@
         _topChooseView.edit = YES;
         _bottomChooseView.hidden = YES;
     }else {
+        if (sender == nil) {
+            return;
+        }
         label.text = @"切换栏目";
         [button2 setTitle:@"排序删除" forState:UIControlStateNormal];
         _topChooseView.edit = NO;
         _bottomChooseView.hidden = NO;
     }
 }
+
+
+
 - (void)spreadAction:(UIButton *)sender
 {
     //1. 更新UI上作所改动至数组
@@ -230,6 +237,6 @@
 
 - (void)didSetEditable:(id)chooseView
 {
-    [self switchAction:_header.subviews[2]];
+    [self switchAction:nil];
 }
 @end
