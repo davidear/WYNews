@@ -56,10 +56,10 @@
 {
     [view addSubview:self.view];
     CGRect frame = view.bounds;
-    frame.size.height = frame.size.height - 44;//调整44高度,dock
+    frame.size.height = frame.size.height - kDockHeight;//调整dock高度
     frame.origin.y = -frame.size.height;
     self.view.frame = frame;
-    [UIView animateWithDuration:kDuration animations:^{
+    [UIView animateWithDuration:kDuration delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         self.view.frame = CGRectMake(0, 0, frame.size.width, frame.size.height);
     } completion:^(BOOL finished) {
         
@@ -125,12 +125,12 @@
     [self.view addSubview:_topChooseView];
     
     
-    _label = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_topChooseView.frame) + 100, [UIScreen mainScreen].bounds.size.width, 30)];
+    _label = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_topChooseView.frame), [UIScreen mainScreen].bounds.size.width, 30)];
     _label.backgroundColor = [UIColor lightGrayColor];
     _label.text = @" 点击添加更多栏目";
     [self.view addSubview:_label];
 
-    _bottomChooseView = [[WYButtonChooseView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_label.frame) + kMarginH, [UIScreen mainScreen].bounds.size.width, 200)];
+    _bottomChooseView = [[WYButtonChooseView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_label.frame), [UIScreen mainScreen].bounds.size.width, 200)];
     _bottomChooseView.chooseDelegate = self;
     _bottomChooseView.dragable = NO;
     [self.view addSubview:_bottomChooseView];
@@ -165,8 +165,8 @@
 {
     [UIView animateWithDuration:kDuration animations:^{
         _topChooseView.frame = CGRectMake(0, CGRectGetMaxY(_header.frame), _topChooseView.contentSize.width, _topChooseView.contentSize.height);
-        _label.frame = CGRectMake(0, CGRectGetMaxY(_topChooseView.frame) + kMarginH, self.view.frame.size.width, 30);
-        _bottomChooseView.frame = CGRectMake(0, CGRectGetMaxY(_label.frame) + kMarginH, self.view.frame.size.width, self.view.frame.size.height - CGRectGetMaxY(_label.frame));
+        _label.frame = CGRectMake(0, CGRectGetMaxY(_topChooseView.frame), self.view.frame.size.width, 30);
+        _bottomChooseView.frame = CGRectMake(0, CGRectGetMaxY(_label.frame), self.view.frame.size.width, self.view.frame.size.height - CGRectGetMaxY(_label.frame));
     }];
 }
 #pragma mark - button Action

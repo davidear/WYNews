@@ -47,8 +47,12 @@
             NSArray *array = [responseObject objectForKey:@"tList"];
             for (NSDictionary *dic in array) {
                 WYTopic *topic = [[WYTopic alloc] initWithDic:dic];
-                if (selectedMutArray.count < 24) {
-                    [selectedMutArray addObject:topic];
+                if (selectedMutArray.count < 12) {//随意做的，这里没有做本地存储，以后再弄
+                    if (topic.headLine == YES) {
+                        [selectedMutArray insertObject:topic atIndex:0];
+                    }else {
+                        [selectedMutArray addObject:topic];
+                    }
                 }else {
                     [unselectedMutArray addObject:topic];
                 }
