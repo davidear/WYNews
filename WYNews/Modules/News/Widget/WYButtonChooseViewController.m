@@ -37,7 +37,7 @@
             [_topChooseView addButtonWith:topic.tname position:CGPointZero];
         }
     }
-    [self refreshView];
+//    [self refreshView];
 }
 
 - (void)setUnSelectedArray:(NSMutableArray *)unSelectedArray
@@ -48,7 +48,7 @@
             [_bottomChooseView addButtonWith:topic.tname position:CGPointZero];
         }
     }
-    [self refreshView];
+//    [self refreshView];
 }
 
 - (void)showInView:(UIView *)view

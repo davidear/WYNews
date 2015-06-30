@@ -43,66 +43,12 @@
     [spreadButton setImage:[UIImage imageNamed:@"channel_nav_arrow"] forState:UIControlStateNormal];
     [spreadButton addTarget:self action:@selector(spreadChooseView:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:spreadButton];
-    
-//    _buttonChooseVC = [[WYButtonChooseViewController alloc] init];
-//    _buttonChooseVC.topicDelegate = self;
 }
 
-//- (void)loadData
-//{
-//    //网络获取topicList
-//    [[WYNetwork sharedWYNetwork] HttpGet:kWYNetworkTopicListURLStr parameter:nil success:^(id responseObject) {
-////        NSLog(@"responseObject is %@", responseObject);
-//        if (responseObject != nil) {
-//            //根据hasIcon加到不同的数组
-//            NSMutableArray *selectedMutArray = [NSMutableArray array];
-//            NSMutableArray *unselectedMutArray = [NSMutableArray array];
-//            NSArray *array = [responseObject objectForKey:@"tList"];
-//            for (NSDictionary *dic in array) {
-//                WYTopic *topic = [[WYTopic alloc] initWithDic:dic];
-//                if (selectedMutArray.count < 24) {
-//                    [selectedMutArray addObject:topic];
-//                }else {
-//                    [unselectedMutArray addObject:topic];
-//                }
-//            }
-//            _buttonChooseVC.selectedArray = selectedMutArray;
-//            _buttonChooseVC.unSelectedArray = unselectedMutArray;
-//            _topicScrollView.topicArray = _buttonChooseVC.selectedArray;
-//            [self.delegate topicScrollViewDidChanged:_buttonChooseVC.selectedArray];
-//        }
-//    } failure:^(NSError *error) {
-//        
-//    }];
-//    //相关赋值
-//}
 - (void)spreadChooseView:(UIButton *)sender
 {
-//    //数组赋值
-//    if (_buttonChooseVC.selectedArray == nil) {
-//        _buttonChooseVC.selectedArray = [NSMutableArray arrayWithArray:_topicScrollView.topicArray];
-//    }
-//    if (_buttonChooseVC.unSelectedArray == nil) {
-//        _buttonChooseVC.unSelectedArray = [NSMutableArray arrayWithArray:_topicScrollView.topicArray];
-//    }
-    
     //showInView
     [_topicScrollView.buttonChooseVC showInView:self.superview];
 }
-//#pragma mark - WYButtonChooseDelegate
-//- (void)buttonChooseViewTopicArrayDidChange:(NSArray *)topicArray
-//{
-//    _topicScrollView.topicArray = _buttonChooseVC.selectedArray;
-//    [self.delegate topicScrollViewDidChanged:_buttonChooseVC.selectedArray];
-//}
-//
-//- (void)buttonChooseViewDidSelected:(NSString *)tname
-//{
-//    for (int i = 0; i < _topicScrollView.topicArray.count; i++) {
-//        WYTopic *topic = _topicScrollView.topicArray[i];
-//        if ([tname isEqualToString:topic.tname]) {
-//            _topicScrollView.offsetX = i;
-//        }
-//    }
-//}
+
 @end
