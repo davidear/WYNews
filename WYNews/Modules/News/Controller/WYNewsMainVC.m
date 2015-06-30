@@ -92,16 +92,20 @@
     //1. 筛选self.childViewControllers
     NSMutableArray *mutArray = [NSMutableArray array];
     for (WYTopic *topic in _topicScrollView.topicArray) {
+        __block BOOL isContained = NO;
         [self.childViewControllers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             WYNewsTableController *newsTC = obj;
             if ([newsTC.tid isEqualToString:topic.tid]) {
                 [mutArray addObject:newsTC];
+                isContained = YES;
                 *stop = YES;
             }
         }];
-        WYNewsTableController *newsTC = [[WYNewsTableController alloc] initWithStyle:UITableViewStylePlain];
-        newsTC.tid = topic.tid;
-        [mutArray addObject:newsTC];
+        if (!isContained) {
+            WYNewsTableController *newsTC = [[WYNewsTableController alloc] initWithStyle:UITableViewStylePlain];
+            newsTC.tid = topic.tid;
+            [mutArray addObject:newsTC];
+        }
     }
     
     //2. 将self.childViewControllers清空，并重新附上新数组
@@ -109,6 +113,7 @@
     for (WYNewsTableController *newsTC in mutArray) {
         [self addChildViewController:newsTC];
     }
+
     
     //3. 刷新数组中VC对应的tableView的frame，加入到_newsScrollView
     for (int i = 0; i < self.childViewControllers.count; i++) {
@@ -148,7 +153,10 @@
 #pragma mark - TopicHeaderDelegate
 - (void)topicScrollViewDidChanged:(NSArray *)selectedArray
 {
-    [self refreshChildVCs];
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+        [self refreshChildVCs];
+//    });
 }
 
 - (void)topicScrollViewDidSelectButton:(NSInteger)selectedButtonIndex
