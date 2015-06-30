@@ -37,7 +37,7 @@
 //    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navbar_netease"]];
     
     UIButton *button1 = [UIButton buttonWithType:UIButtonTypeCustom];
-    button1.frame = CGRectMake(0, 0, 48, 44);
+    button1.frame = CGRectMake(0, 0, 48, 30);
     button1.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 24);
     [button1 setImage:[UIImage imageNamed:@"top_navi_bell_normal"] forState:UIControlStateNormal];
     [button1 setImage:[UIImage  imageNamed:@"top_navi_bell_highlight"] forState:UIControlStateHighlighted];
@@ -45,7 +45,7 @@
     self.tabBarController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button1];
     
     UIButton *button2 = [UIButton buttonWithType:UIButtonTypeCustom];
-    button2.frame = CGRectMake(0, 0, 48, 44);
+    button2.frame = CGRectMake(0, 0, 48, 30);
     button2.imageEdgeInsets = UIEdgeInsetsMake(0, 24, 0, 0);
     [button2 setImage:[UIImage imageNamed:@"top_navigation_square"] forState:UIControlStateNormal];
     //    [button2 setImage:[UIImage  imageNamed:@"top_navi_bell_highlight"] forState:UIControlStateHighlighted];
