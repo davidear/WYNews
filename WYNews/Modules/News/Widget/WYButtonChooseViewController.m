@@ -9,6 +9,7 @@
 #import "WYButtonChooseViewController.h"
 #import "WYButtonChooseView.h"
 #import "WYTopic.h"
+#import "WYtool.h"
 #define kHeaderHeight       36
 #define kDefaultY           20
 @interface WYButtonChooseViewController () <LabelChooseDelegate>
@@ -55,7 +56,7 @@
 {
     [view addSubview:self.view];
     CGRect frame = view.bounds;
-//    frame.size.height = frame.size.height - 44;//调整44高度,dock
+    frame.size.height = frame.size.height - 44;//调整44高度,dock
     frame.origin.y = -frame.size.height;
     self.view.frame = frame;
     [UIView animateWithDuration:kDuration animations:^{
@@ -216,8 +217,13 @@
             [self.topicDelegate buttonChooseViewDidSelected:button.titleLabel.text];
         }
     }else {
-        [_topChooseView addButtonWith:button.titleLabel.text position:[_topChooseView convertPoint:button.frame.origin fromView:_bottomChooseView]];
-        [_bottomChooseView removeButton:button];
+        if (_topChooseView.buttonArray.count < kButtonChooseViewSelectedTopicMaxCount) {
+            [_topChooseView addButtonWith:button.titleLabel.text position:[_topChooseView convertPoint:button.frame.origin fromView:_bottomChooseView]];
+            [_bottomChooseView removeButton:button];
+        }else {
+            [WYTool showMsg:@"已经加满了"];
+            return;
+        }
     }
     [self refreshView];
 }

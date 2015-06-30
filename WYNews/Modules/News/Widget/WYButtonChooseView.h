@@ -12,7 +12,7 @@
 #define kCountOfARow        4
 #define kMarginW            ([UIScreen mainScreen].bounds.size.width - 4 *kButtonW) / 5
 
-#define kDuration       1.0f
+#define kDuration       0.5f
 @class WYButtonChooseView;
 @protocol LabelChooseDelegate <NSObject>
 - (void)didSelectedButton:(WYLabelButton *)button;
